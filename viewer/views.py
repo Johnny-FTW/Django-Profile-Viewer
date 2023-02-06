@@ -8,3 +8,7 @@ def profile(request, pk):
     profile = Profile.objects.get(id=pk)
     context = {'profile': profile}
     return render(request,'profile.html',context)
+
+
+def home(request):
+    return render(request,'home.html')
