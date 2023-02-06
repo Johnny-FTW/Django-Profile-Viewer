@@ -17,6 +17,7 @@ class Profile(Model):
     gender = ForeignKey(Gender, on_delete=DO_NOTHING)
     city = CharField(max_length=50)
     about = TextField(max_length=1024)
+    profile_picture = CharField(max_length=50, null=True)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
