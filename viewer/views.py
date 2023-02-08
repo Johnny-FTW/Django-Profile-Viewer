@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse_lazy
+from django.views import generic
+
+from viewer.forms import SignUpForm
 from viewer.models import Profile
 
 
@@ -12,3 +16,9 @@ def profile(request, pk):
 
 def home(request):
     return render(request,'home.html')
+
+
+class SignUpView(generic.CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy('home')
+    template_name = 'signup.html'
