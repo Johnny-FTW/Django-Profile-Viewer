@@ -1,3 +1,8 @@
+
+
+from django.contrib.auth.models import User
+
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -22,3 +27,4 @@ class SignUpView(generic.CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('home')
     template_name = 'signup.html'
+    #profile = Profile.objects.create(user=)

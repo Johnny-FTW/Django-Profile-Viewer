@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -10,20 +11,26 @@ class Gender(Model):
     def __str__(self):
         return self.name
 
+class Photo(Model):
+    link = CharField(max_length=1024, null=True)
 
 class Profile(Model):
-    first_name = CharField(max_length=50)
-    last_name = CharField(max_length=50)
-    gender = ForeignKey(Gender, on_delete=DO_NOTHING)
-    city = CharField(max_length=50)
-    followers = IntegerField(default=0)
-    following = IntegerField(default=0)
-    about = TextField(max_length=1024)
+    user = ForeignKey(User, on_delete=DO_NOTHING)
+    gender = ForeignKey(Gender, on_delete=DO_NOTHING, null=True)
+    city = CharField(max_length=50, null=True)
+    about = TextField(max_length=1024, null=True)
     profile_picture = CharField(max_length=1024, null=True)
-    photo_link1 = CharField(max_length=1024, null=True)
-    photo_link2 = CharField(max_length=1024, null=True)
-    photo_link3 = CharField(max_length=1024, null=True)
-    photo_link4 = CharField(max_length=1024, null=True)
+    photos = ForeignKey(Photo, on_delete=DO_NOTHING, null=True)
+
+
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+# class UserFollowing(models.Model):
+#     user_id = models.ForeignKey("User", related_name="following")
+#
+#     following_user_id = models.ForeignKey("User", related_name="followers")
+#
+#     # You can even add info about when user started following
+#     created = models.DateTimeField(auto_now_add=True)
