@@ -23,6 +23,10 @@ def home(request):
     return render(request,'home.html')
 
 
+# def sign_up(request):
+#     return render(request,'signup.html')
+
+
 class SignUpView(generic.CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('home')
