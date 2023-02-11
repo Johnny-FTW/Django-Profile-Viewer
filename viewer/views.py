@@ -1,5 +1,4 @@
-
-
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
@@ -23,12 +22,18 @@ def home(request):
     return render(request,'home.html')
 
 
-# def sign_up(request):
-#     return render(request,'signup.html')
 
 
 class SignUpView(generic.CreateView):
-    form_class = SignUpForm
-    success_url = reverse_lazy('home')
+    model = User
+    form_class = UserCreationForm
     template_name = 'signup.html'
-    #profile = Profile.objects.create(user=)
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self.make_profile()
+        return response
+
+    def make_profile(self):
+        Profile.objects.create(user=self.object)
+
+
