@@ -15,7 +15,7 @@ class Photo(Model):
     link = CharField(max_length=1024, null=True)
 
 class Profile(Model):
-    user = ForeignKey(User, on_delete=DO_NOTHING)
+    user = OneToOneField(User, on_delete=models.CASCADE)
     gender = ForeignKey(Gender, on_delete=DO_NOTHING, null=True)
     city = CharField(max_length=50, null=True)
     about = TextField(max_length=1024, null=True)
