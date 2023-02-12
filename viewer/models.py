@@ -23,7 +23,7 @@ class Profile(Model):
     photos = ForeignKey(Photo, on_delete=DO_NOTHING, null=True)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.user}'
 
 # class UserFollowing(models.Model):
 #     user_id = models.ForeignKey("User", related_name="following")

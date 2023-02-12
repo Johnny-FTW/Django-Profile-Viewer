@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 
@@ -25,7 +25,7 @@ def home(request):
     return render(request,'home.html')
 
 
-def register_request(request):
+def signup_view(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -40,31 +40,28 @@ def register_request(request):
         return render(request=request, template_name="signup.html", context={"form": form})
 
 
-
-# def logout_view(request):
-#     logout(request)
-#     return redirect('home')
-
-
+def logout_view(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.")
+    return redirect('home')
 
 
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect('home')
+            else:
+                messages.error(request,"Invalid username or password.")
 
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data['username']
-#             password = form.cleaned_data['password']
-#             user = authenticate(request, username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('home')
-#             else:
-#                 # Return an 'invalid login' error message.
-#                 ...
-#         else:
-#             # The form is not valid
-#             ...
-#     else:
-#         form = LoginForm()
-#     return render(request, 'login.html', {'form': form})
+        else:
+            messages.error(request,"Invalid username or password.")
+
+    form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
