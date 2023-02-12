@@ -22,6 +22,10 @@ def my_profile(request):
     return render(request,'profile.html',context)
 
 
+def edit_profile(request):
+    return render(request, 'edit_profile.html')
+
+
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)
@@ -47,7 +51,7 @@ def search(request):
             usernames = User.objects.filter(username__contains=search)
             real_usernames = User.objects.filter(Q(first_name__icontains=search) | Q(last_name__icontains=search))
 
-    context = {'search':search,'usernames':usernames, 'real_usernames':real_usernames}
+    context = {'search': search, 'usernames': usernames, 'real_usernames': real_usernames}
     return render(request, 'search.html', context)
 
 
