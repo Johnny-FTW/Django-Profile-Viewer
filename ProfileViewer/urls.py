@@ -20,7 +20,7 @@ from viewer.views import profile, home, signup_view, logout_view, login_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('profile/<pk>/', profile, name='profile'),
+    path('profile/<str:username>/', profile, name='profile'),
     path('',home, name='home'),
     path('signup/', signup_view, name='signup_view'),
     path('logout/', logout_view, name='logout_view'),

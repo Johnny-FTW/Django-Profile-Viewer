@@ -19,7 +19,7 @@
               </button>
             </div>
             <div class="ms-3" style="margin-top: 130px;">
-              <h5>{{ profile.first_name }} {{ profile.last_name }}</h5>
+              <h5>{{ user.first_name }} {{ user.last_name }}</h5>
               <p>{{ profile.city }}</p>
             </div>
           </div>
@@ -47,23 +47,10 @@
             </div>
             <div class="row g-2">
               <div class="col mb-2">
-                <img src="{{ profile.photo_link1 }}"
+                <img src="{{ profile.photos }}"
                   alt="image 1" class="w-100 rounded-3">
               </div>
-              <div class="col mb-2">
-                <img src="{{ profile.photo_link2 }}"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
-            </div>
-            <div class="row g-2">
-              <div class="col">
-                <img src="{{ profile.photo_link3 }}"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
-              <div class="col">
-                <img src="{{ profile.photo_link4 }}"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
+
             </div>
           </div>
         </div>

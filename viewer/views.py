@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
@@ -15,14 +16,21 @@ from viewer.forms import SignUpForm
 from viewer.models import Profile
 
 
-def profile(request, pk):
-    profile = Profile.objects.get(id=pk)
+@login_required
+def profile(request, username):
+    user = User.objects.get(username=username)
+    profile = Profile.objects.get(user=user)
     context = {'profile': profile}
     return render(request,'profile.html',context)
 
 
 def home(request):
-    return render(request,'home.html')
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user=request.user)
+        context = {'profile': profile}
+        return render(request, 'home.html', context)
+    else:
+        return render(request, 'home.html')
 
 
 def signup_view(request):
@@ -59,9 +67,7 @@ def login_view(request):
                 return redirect('home')
             else:
                 messages.error(request,"Invalid username or password.")
-
         else:
             messages.error(request,"Invalid username or password.")
-
     form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
