@@ -16,12 +16,16 @@ from viewer.forms import SignUpForm
 from viewer.models import Profile
 
 
+
 @login_required
-def profile(request, username):
-    user = User.objects.get(username=username)
-    profile = Profile.objects.get(user=user)
+def my_profile(request):
+    profile = Profile.objects.get(user=request.user)
     context = {'profile': profile}
     return render(request,'profile.html',context)
+
+
+# def profile(request, username):
+#     user = User.objects.get(username=username)
 
 
 def home(request):

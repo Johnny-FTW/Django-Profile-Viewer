@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} {{ profile.first_name }} {{ profile.last_name }} {% endblock %}
+{% block title %} {{ profile.user.first_name }} {{ profile.user.last_name }}{% endblock %}
 
 {% block content %}
 <section class="h-100 gradient-custom-2">
@@ -13,10 +13,12 @@
               <img src="{{ profile.profile_picture }}"
                 alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                 style="width: 150px; z-index: 1">
-              <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+              {% if request.user.is_authenticated %}
+              <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"
                 style="z-index: 1;">
                 Edit profile
               </button>
+              {% endif %}
             </div>
             <div class="ms-3" style="margin-top: 130px;">
               <h5>{{ user.first_name }} {{ user.last_name }}</h5>
