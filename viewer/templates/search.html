@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  {% if usernames %}
+    <h3>Usernames:</h3>
+    <ul>
+    {% for username in usernames %}
+      <li><a href="{% url 'profile' username=username.username %}">{{ username.username }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if real_usernames %}
+    <h3>Real Usernames:</h3>
+    <ul>
+    {% for real_username in real_usernames %}
+      <li><a href="{% url 'profile' username=real_username.username %}">{{ real_username.first_name }} {{ real_username.last_name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
