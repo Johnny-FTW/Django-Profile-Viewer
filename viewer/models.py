@@ -16,11 +16,11 @@ class Photo(Model):
 
 class Profile(Model):
     user = OneToOneField(User, on_delete=models.CASCADE)
-    gender = ForeignKey(Gender, on_delete=DO_NOTHING, null=True)
-    city = CharField(max_length=50, null=True)
-    about = TextField(max_length=1024, null=True)
-    profile_picture = CharField(max_length=1024, null=True)
-    photos = ForeignKey(Photo, on_delete=DO_NOTHING, null=True)
+    gender = ForeignKey(Gender, on_delete=DO_NOTHING, null=True, blank=True)
+    city = CharField(max_length=50, null=True, blank=True)
+    about = TextField(max_length=1024, null=True, blank=True)
+    profile_picture = CharField(max_length=1024, null=True, blank=True)
+    photos = ForeignKey(Photo, on_delete=DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user}'

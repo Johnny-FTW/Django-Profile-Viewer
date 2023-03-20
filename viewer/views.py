@@ -68,7 +68,7 @@ def signup_view(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
     else:
         form = SignUpForm()
-        return render(request=request, template_name="signup.html", context={"form": form})
+    return render(request=request, template_name="signup.html", context={"form": form})
 
 
 def logout_view(request):
