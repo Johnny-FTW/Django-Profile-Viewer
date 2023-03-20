@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db.models import Q
-
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -23,7 +22,9 @@ def my_profile(request):
 
 
 def edit_profile(request):
-    return render(request, 'edit_profile.html')
+    profile = Profile.objects.get(user=request.user)
+    context = {'profile': profile}
+    return render(request, 'edit_profile.html', context)
 
 
 def profile(request, username):
@@ -55,7 +56,6 @@ def search(request):
     return render(request, 'search.html', context)
 
 
-
 def signup_view(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
@@ -71,6 +71,7 @@ def signup_view(request):
     return render(request=request, template_name="signup.html", context={"form": form})
 
 
+@login_required
 def logout_view(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")

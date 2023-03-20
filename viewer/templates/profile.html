@@ -27,7 +27,9 @@
 
                         <div class="ms-3" style="margin-top: 130px;">
                             <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+                            {% if profile.city %}
                             <p>{{ profile.city }}</p>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -45,19 +47,24 @@
                     <div class="card-body p-4 text-black">
                         <div class="mb-5">
                             <p class="lead fw-normal mb-1">About</p>
+
                             <div class="p-4" style="background-color: #f8f9fa;">
+                                {% if profile.about %}
                                 <p class="font-italic mb-1">{{ profile.about }}</p>
+                                {% endif %}
                             </div>
+
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <p class="lead fw-normal mb-0">Photos</p>
                         </div>
                         <div class="row g-2">
                             <div class="col mb-2">
+                                {% if profile.photos %}
                                 <img src="{{ profile.photos }}"
                                      alt="image 1" class="w-100 rounded-3">
+                                {% endif %}
                             </div>
-
                         </div>
                     </div>
                 </div>
