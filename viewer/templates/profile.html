@@ -20,7 +20,7 @@
                                  style="width: 150px; z-index: 1">
                             {% endif %}
                             {% if request.user.is_authenticated and request.user == profile.user %}
-                            <a href="{% url 'edit_profile' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                            <a href="{% url 'edit_profile_page' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
                                     style="z-index: 1;">Edit profile</a>
                             {% endif %}
                         </div>

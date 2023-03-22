@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="edit profile page">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="fixes adding photo links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileViewer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/static/add_photos.js" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/static/add_photos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +83,7 @@
       <workItem from="1677514375940" duration="50000" />
       <workItem from="1678999075682" duration="1190000" />
       <workItem from="1679328770054" duration="14792000" />
-      <workItem from="1679505888086" duration="4735000" />
+      <workItem from="1679505888086" duration="12177000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1675621560638</created>
@@ -339,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679343735196</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fixes adding photo links">
+      <created>1679511444537</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1679511444537</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="models" />
     <MESSAGE value="templates" />
     <MESSAGE value="templates, css" />
     <MESSAGE value="profile pic" />
@@ -397,7 +401,8 @@
     <MESSAGE value="edit profile template" />
     <MESSAGE value="edit profile button" />
     <MESSAGE value="edit profile page" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit profile page" />
+    <MESSAGE value="fixes adding photo links" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes adding photo links" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

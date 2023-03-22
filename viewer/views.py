@@ -1,8 +1,13 @@
+from urllib.error import URLError
+from urllib.request import urlopen
+
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.core.validators import URLValidator
 from django.db.models import Q
 from django.shortcuts import render, redirect
 
@@ -11,6 +16,9 @@ from django.shortcuts import render, redirect
 
 from viewer.forms import SignUpForm
 from viewer.models import Profile
+
+
+
 
 @login_required
 def my_profile(request):
@@ -28,10 +36,44 @@ def edit_profile_page(request):
 
 @login_required
 def edit_profile(request):
+    profile = Profile.objects.get(user=request.user)
+    user = request.user
+
     if request.method == 'POST':
-        profile_picture = request.POST.get('profile_photo')
-        print(profile_picture)
-    return redirect('prfile.html')
+        profile_picture = request.POST.get('photo').strip()
+        city = request.POST.get('city').strip()
+        about = request.POST.get('about').strip()
+        first_name = request.POST.get('first_name').strip()
+        last_name = request.POST.get('last_name').strip()
+        email = request.POST.get('email').strip()
+
+        # Update profile picture if a valid URL is provided
+        if profile_picture:
+            url_validator = URLValidator()
+            try:
+                url_validator(profile_picture)
+                with urlopen(profile_picture):
+                    profile.profile_picture = profile_picture
+            except (ValidationError, URLError):
+                pass
+        else:
+            profile.profile_picture = None
+
+        # Update profile fields
+        profile.city = city
+        profile.about = about
+        profile.save()
+
+        # Update user fields
+        if first_name:
+            user.first_name = first_name
+        if last_name:
+            user.last_name = last_name
+        if email:
+            user.email = email
+        user.save()
+
+    return redirect('/my_profile/edit_profile/')
 
 
 
