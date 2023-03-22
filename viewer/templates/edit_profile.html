@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Edit profile{% endblock %}
-<script src="../static/add_photos.js"></script>
+
 {% block content %}
 
 <section class="h-100 gradient-custom-2">
@@ -29,83 +29,85 @@
                         </div>
                     </div>
 
-
-                    <div class="card-body p-4 text-black">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <p class="lead fw-normal mb-0">Profile Picture</p>
-                        </div>
-                        <div id="profilePicContainer">
-                            <div class="form-group mb-5">
-                                <label>Profile picture link:</label>
-                                <input type="text" class="form-control" name="photo" id="profile_photo" value="{{ profile.profile_picture }}">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="card-body p-4 text-black">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="lead fw-normal mb-0">Profile Picture</p>
                             </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <p class="lead fw-normal mb-0">User Details</p>
-                        </div>
-                        <div id="profileUserInfContainer">
-                            <div class="form-group mb-5">
-                                <div class="row mb-2">
-                                    <div class="col">
-                                        <label>First Name:</label>
-                                        <input type="text" class="form-control" id="first_name"
-                                               value="{{ user.first_name }}">
-                                    </div>
-                                    <div class="col">
-                                        <label>Last Name:</label>
-                                        <input type="text" class="form-control" id="last_name"
-                                               value="{{ user.last_name }}">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <label>Email:</label>
-                                        <input type="text" class="form-control" id="email"
-                                               value="{{ user.email }}">
-                                    </div>
-                                    <div class="col">
-                                        <label>City:</label>
-                                        <input type="text" class="form-control" id="city"
-                                               value="{{ user.city }}">
-                                    </div>
+                            <div id="profilePicContainer">
+                                <div class="form-group mb-5">
+                                    <label>Profile picture link:</label>
+                                    <input type="text" class="form-control" name="photo" id="profile_photo"
+                                           value="{% if profile.profile_picture %}{{ profile.profile_picture }}{% endif %}">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="mb-5">
-                            <p class="lead fw-normal my-1">About</p>
-                            <div class="p-4" style="background-color: #f8f9fa;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="lead fw-normal mb-0">User Details</p>
+                            </div>
+                            <div id="profileUserInfContainer">
+                                <div class="form-group mb-5">
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <label>First Name:</label>
+                                            <input type="text" class="form-control" id="first_name"
+                                                   value="{{ user.first_name }}">
+                                        </div>
+                                        <div class="col">
+                                            <label>Last Name:</label>
+                                            <input type="text" class="form-control" id="last_name"
+                                                   value="{{ user.last_name }}">
+                                        </div>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="about">Write something about yourself:</label>
-                                    <textarea id="about" name="about" required rows="6"
-                                              class="form-control col-12 col-md-6" maxlength="500">
-                                    {{ profile.about }}
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Email:</label>
+                                            <input type="text" class="form-control" id="email"
+                                                   value="{{ user.email }}">
+                                        </div>
+                                        <div class="col">
+                                            <label>City:</label>
+                                            <input type="text" class="form-control" id="city"
+                                                   value="{{ user.city }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-5">
+                                <p class="lead fw-normal my-1">About</p>
+                                <div class="p-4" style="background-color: #f8f9fa;">
+
+                                    <div class="form-group">
+                                        <label for="about">Write something about yourself:</label>
+                                        <textarea id="about" name="about" required rows="6"
+                                                  class="form-control col-12 col-md-6" maxlength="500">
+                                    {% if profile.about %}{{ profile.about }}{% endif %}
                                     </textarea>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <p class="lead fw-normal mb-0">Photos</p>
-                        </div>
-                        <div id="photoContainer">
-                            <div class="form-group">
-                                <label for="photo1">Photo link:</label>
-                                <input type="text" class="form-control" name="photos[]" id="photo1">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="lead fw-normal mb-0">Photos</p>
                             </div>
+                            <div id="photoContainer">
+                                <div class="form-group">
+                                    <label for="photo1">Photo link:</label>
+                                    <input type="text" class="form-control" name="photos[]" id="photo1">
+                                </div>
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary" id="addPhotoBtn">Add Photo Link</button>
+                            <button type="button" class="btn btn-danger" id="removePhotoBtn">Remove Photo Link</button>
+
                         </div>
-                        <br>
-                        <button type="button" class="btn btn-primary" id="addPhotoBtn">Add Photo Link</button>
-                        <button type="button" class="btn btn-danger" id="removePhotoBtn">Remove Photo Link</button>
 
-                    </div>
-
-                    <button type="button" class="btn btn-success btn-lg btn-block m-1" id="saveBtn">Save Changes
-                    </button>
-
+                        <button type="button" class="btn btn-success btn-lg btn-block m-1" id="saveBtn">Save Changes
+                        </button>
+                    </form>
 
                 </div>
             </div>

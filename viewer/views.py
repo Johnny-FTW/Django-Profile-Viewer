@@ -7,9 +7,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from django.urls import reverse_lazy
-from django.views import generic
-from django.views.generic import CreateView
+
 
 from viewer.forms import SignUpForm
 from viewer.models import Profile
@@ -21,10 +19,20 @@ def my_profile(request):
     return render(request,'profile.html',context)
 
 
-def edit_profile(request):
+@login_required
+def edit_profile_page(request):
     profile = Profile.objects.get(user=request.user)
     context = {'profile': profile}
     return render(request, 'edit_profile.html', context)
+
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        profile_picture = request.POST.get('profile_photo')
+        print(profile_picture)
+    return redirect('prfile.html')
+
 
 
 def profile(request, username):
