@@ -2,6 +2,10 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django import forms
+from django.db.models import Model
+from django.forms import ModelForm
+
+from viewer.models import Profile
 
 
 class SignUpForm(UserCreationForm):

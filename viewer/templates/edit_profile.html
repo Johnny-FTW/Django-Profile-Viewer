@@ -72,7 +72,18 @@
                                             <input type="text" class="form-control" id="city"
                                                    value="{{ profile.city }}" name="city">
                                         </div>
+                                        <div class="col">
+                                            <label>Gender</label>
+                                            <select name="gender" class="form-select"
+                                                    aria-label="Default select example">
+                                                <option value="">Select gender</option>
+                                                {% for gender in genders %}
+                                                <option value="{{ gender.id }}" selected>{{ gender.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
 

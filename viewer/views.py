@@ -11,13 +11,10 @@ from django.core.validators import URLValidator
 from django.db.models import Q
 from django.shortcuts import render, redirect
 
-# Create your views here.
 
 
 from viewer.forms import SignUpForm
-from viewer.models import Profile
-
-
+from viewer.models import Profile, Gender
 
 
 @login_required
@@ -30,14 +27,17 @@ def my_profile(request):
 @login_required
 def edit_profile_page(request):
     profile = Profile.objects.get(user=request.user)
-    context = {'profile': profile}
+    genders = Gender.objects.all()
+    context = {'profile': profile, 'genders':genders}
     return render(request, 'edit_profile.html', context)
+
 
 
 @login_required
 def edit_profile(request):
     profile = Profile.objects.get(user=request.user)
     user = request.user
+    genders = Gender.objects.all()
 
     if request.method == 'POST':
         profile_picture = request.POST.get('photo').strip()
@@ -46,6 +46,7 @@ def edit_profile(request):
         first_name = request.POST.get('first_name').strip()
         last_name = request.POST.get('last_name').strip()
         email = request.POST.get('email').strip()
+        gender = request.POST.get('gender', '')
 
         # Update profile picture if a valid URL is provided
         if profile_picture:
@@ -62,18 +63,18 @@ def edit_profile(request):
         # Update profile fields
         profile.city = city
         profile.about = about
+        print(type(gender))
         profile.save()
 
         # Update user fields
-        if first_name:
-            user.first_name = first_name
-        if last_name:
-            user.last_name = last_name
-        if email:
-            user.email = email
-        user.save()
 
-    return redirect('/my_profile/edit_profile/')
+        user.first_name = first_name
+        user.last_name = last_name
+        user.email = email
+        user.save()
+        return redirect('my_profile/edit_profile/')
+
+    return render(request, 'edit_profile.html', context={'genders':genders})
 
 
 
