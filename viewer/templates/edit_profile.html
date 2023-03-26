@@ -78,7 +78,11 @@
                                                     aria-label="Default select example">
                                                 <option value="">Select gender</option>
                                                 {% for gender in genders %}
+                                                {% if profile.gender.id == gender.id %}
                                                 <option value="{{ gender.id }}" selected>{{ gender.name }}</option>
+                                                {% else %}
+                                                <option value="{{ gender.id }}">{{ gender.name }}</option>
+                                                {% endif %}
                                                 {% endfor %}
                                             </select>
                                         </div>

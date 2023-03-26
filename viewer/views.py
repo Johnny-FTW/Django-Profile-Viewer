@@ -63,7 +63,13 @@ def edit_profile(request):
         # Update profile fields
         profile.city = city
         profile.about = about
-        print(type(gender))
+
+        if gender:
+            selected_gender = Gender.objects.get(id=gender)
+            profile.gender = selected_gender
+        else:
+            profile.gender = None
+
         profile.save()
 
         # Update user fields
