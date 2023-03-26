@@ -20,7 +20,7 @@ class Profile(Model):
     city = CharField(max_length=50, null=True, blank=True)
     about = TextField(max_length=1024, null=True, blank=True)
     profile_picture = CharField(max_length=1024, null=True, blank=True)
-    photos = ForeignKey(Photo, on_delete=DO_NOTHING, null=True, blank=True)
+    photos = ManyToManyField(Photo, blank=True)
 
     def __str__(self):
         return f'{self.user}'

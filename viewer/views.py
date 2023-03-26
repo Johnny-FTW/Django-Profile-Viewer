@@ -1,6 +1,5 @@
 from urllib.error import URLError
 from urllib.request import urlopen
-
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -8,19 +7,18 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
+from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import render, redirect
-
-
-
 from viewer.forms import SignUpForm
-from viewer.models import Profile, Gender
+from viewer.models import Profile, Gender, Photo
 
 
 @login_required
 def my_profile(request):
     profile = Profile.objects.get(user=request.user)
-    context = {'profile': profile}
+    photos = Photo.objects.filter(profile=profile)
+    context = {'profile': profile, 'photos': photos}
     return render(request,'profile.html',context)
 
 
@@ -28,7 +26,9 @@ def my_profile(request):
 def edit_profile_page(request):
     profile = Profile.objects.get(user=request.user)
     genders = Gender.objects.all()
-    context = {'profile': profile, 'genders':genders}
+    photos = profile.photos.all()
+
+    context = {'profile': profile, 'genders':genders, 'photos': photos}
     return render(request, 'edit_profile.html', context)
 
 
@@ -40,6 +40,9 @@ def edit_profile(request):
     genders = Gender.objects.all()
 
     if request.method == 'POST':
+        # Get all photo links from request.POST
+        photos = request.POST.getlist('photos[]')
+
         profile_picture = request.POST.get('photo').strip()
         city = request.POST.get('city').strip()
         about = request.POST.get('about').strip()
@@ -70,6 +73,16 @@ def edit_profile(request):
         else:
             profile.gender = None
 
+        # Create new Photo objects for each photo link
+        with transaction.atomic():
+            # Use atomic transaction to ensure data consistency
+            profile.photos.all().delete() # delete existing photos
+            for photo_link in photos:
+                if photo_link:
+                    photo = Photo(link=photo_link)
+                    photo.save()
+                    profile.photos.add(photo)
+
         profile.save()
 
         # Update user fields
@@ -80,14 +93,15 @@ def edit_profile(request):
         user.save()
         return redirect('my_profile/edit_profile/')
 
-    return render(request, 'edit_profile.html', context={'genders':genders})
-
+    photos = profile.photos.all()
+    return render(request, 'edit_profile.html', context={'profile': profile, 'genders': genders, 'photos': photos})
 
 
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)
-    context = {'profile': profile, 'user':user}
+    photos = Photo.objects.filter(profile=profile)
+    context = {'profile': profile, 'user':user, 'photos':photos}
     return render(request, 'profile.html', context)
 
 
@@ -98,6 +112,7 @@ def home(request):
         return render(request, 'home.html', context)
     else:
         return render(request, 'home.html')
+
 
 def search(request):
     usernames = None

@@ -59,12 +59,13 @@
                             <p class="lead fw-normal mb-0">Photos</p>
                         </div>
                         <div class="row g-2">
+                            {% if photos %}
+                            {% for photo in photos %}
                             <div class="col mb-2">
-                                {% if profile.photos %}
-                                <img src="{{ profile.photos }}"
-                                     alt="image 1" class="w-100 rounded-3">
-                                {% endif %}
+                                <img src="{{ photo.link }}" alt="photo {{ forloop.counter }}" class="w-100 rounded-3">
                             </div>
+                            {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
