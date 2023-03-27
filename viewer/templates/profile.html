@@ -20,13 +20,22 @@
                                  style="width: 150px; z-index: 1">
                             {% endif %}
                             {% if request.user.is_authenticated and request.user == profile.user %}
-                            <a href="{% url 'edit_profile_page' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
-                                    style="z-index: 1;">Edit profile</a>
+                            <a href="{% url 'edit_profile_page' %}" class="btn btn-outline-dark"
+                               data-mdb-ripple-color="dark"
+                               style="z-index: 1;">Edit profile</a>
+                            {% else %}
+                            <a href="" class="btn btn-outline-dark"
+                               data-mdb-ripple-color="dark"
+                               style="z-index: 1;">Follow</a>
                             {% endif %}
                         </div>
 
                         <div class="ms-3" style="margin-top: 130px;">
+                            {% if profile.gender %}
+                            <h5>{{ user.first_name }} {{ user.last_name }} ({{ profile.gender }})</h5>
+                            {% else %}
                             <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+                            {% endif %}
                             {% if profile.city %}
                             <p>{{ profile.city }}</p>
                             {% endif %}
@@ -34,12 +43,16 @@
                     </div>
                     <div class="p-4 text-black" style="background-color: #f8f9fa;">
                         <div class="d-flex justify-content-end text-center py-1">
+                            <div>
+                                <p class="mb-1 h5">{{ profile.photos.count }}</p>
+                                <p class="small text-muted mb-0">Photos</p>
+                            </div>
                             <div class="px-3">
-                                <p class="mb-1 h5">{{ profile.followers }}</p>
+                                <p class="mb-1 h5">{{ profile.followers.count }}</p>
                                 <p class="small text-muted mb-0">Followers</p>
                             </div>
                             <div>
-                                <p class="mb-1 h5">{{ profile.following }}</p>
+                                <p class="mb-1 h5">{{ profile.following.count }}</p>
                                 <p class="small text-muted mb-0">Following</p>
                             </div>
                         </div>
@@ -61,9 +74,14 @@
                         <div class="row g-2">
                             {% if photos %}
                             {% for photo in photos %}
-                            <div class="col mb-2">
-                                <img src="{{ photo.link }}" alt="photo {{ forloop.counter }}" class="w-100 rounded-3">
+                            <div class="col-6 mb-2">
+                                <a href="{{ photo.link }}"><img src="{{ photo.link }}" alt="photo {{ forloop.counter }}"
+                                                                class="w-100 rounded-3"></a>
                             </div>
+                            {% if forloop.counter|divisibleby:2 %}
+                        </div>
+                        <div class="row g-2">
+                            {% endif %}
                             {% endfor %}
                             {% endif %}
                         </div>

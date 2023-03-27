@@ -11,8 +11,13 @@ class Gender(Model):
     def __str__(self):
         return self.name
 
+
 class Photo(Model):
     link = CharField(max_length=1024, null=True)
+
+    def __str__(self):
+        return f'{self.link}'
+
 
 class Profile(Model):
     user = OneToOneField(User, on_delete=models.CASCADE)
@@ -21,14 +26,8 @@ class Profile(Model):
     about = TextField(max_length=1024, null=True, blank=True)
     profile_picture = CharField(max_length=1024, null=True, blank=True)
     photos = ManyToManyField(Photo, blank=True)
+    followers = models.ManyToManyField(User, related_name='following', blank=True)
 
     def __str__(self):
         return f'{self.user}'
 
-# class UserFollowing(models.Model):
-#     user_id = models.ForeignKey("User", related_name="following")
-#
-#     following_user_id = models.ForeignKey("User", related_name="followers")
-#
-#     # You can even add info about when user started following
-#     created = models.DateTimeField(auto_now_add=True)

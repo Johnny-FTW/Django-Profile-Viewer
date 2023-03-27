@@ -98,9 +98,9 @@
                                     <div class="form-group">
                                         <label for="about">Write something about yourself:</label>
                                         <textarea id="about" name="about" required rows="6"
-                                                  class="form-control col-12 col-md-6" maxlength="500">
+                                                  class="form-control col-12 col-md-6" maxlength="500">{% spaceless %}
                                     {% if profile.about %}{{ profile.about }}{% endif %}
-                                    </textarea>
+                                    {% endspaceless %}</textarea>
                                     </div>
                                 </div>
                             </div>
