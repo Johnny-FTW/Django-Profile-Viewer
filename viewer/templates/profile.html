@@ -24,9 +24,20 @@
                                data-mdb-ripple-color="dark"
                                style="z-index: 1;">Edit profile</a>
                             {% else %}
-                            <a href="" class="btn btn-outline-dark"
-                               data-mdb-ripple-color="dark"
-                               style="z-index: 1;">Follow</a>
+                            <form method="post" action="{% url 'follow' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="profile_id" value="{{ profile.id }}">
+                                {% if request.user in profile.followers.all %}
+                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark" style="position: relative; width: 150px;">
+                                    Unfollow
+                                </button>
+                                {% else %}
+                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark" style="position: relative; width: 150px;">
+                                    Follow
+                                </button>
+
+                                {% endif %}
+                            </form>
                             {% endif %}
                         </div>
 
@@ -52,7 +63,7 @@
                                 <p class="small text-muted mb-0">Followers</p>
                             </div>
                             <div>
-                                <p class="mb-1 h5">{{ profile.following.count }}</p>
+                                <p class="mb-1 h5">{{ profile.user.following.count }}</p>
                                 <p class="small text-muted mb-0">Following</p>
                             </div>
                         </div>

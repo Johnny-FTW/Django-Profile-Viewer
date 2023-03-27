@@ -22,7 +22,11 @@
                             {% endif %}
                         </div>
                         <div class="ms-3" style="margin-top: 130px;">
+                            {% if profile.gender %}
+                            <h5>{{ user.first_name }} {{ user.last_name }} ({{ profile.gender }})</h5>
+                            {% else %}
                             <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+                            {% endif %}
                             {% if profile.city %}
                             <p>{{ profile.city }}</p>
                             {% endif %}

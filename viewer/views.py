@@ -27,7 +27,6 @@ def edit_profile_page(request):
     profile = Profile.objects.get(user=request.user)
     genders = Gender.objects.all()
     photos = profile.photos.all()
-
     context = {'profile': profile, 'genders':genders, 'photos': photos}
     return render(request, 'edit_profile.html', context)
 
@@ -126,6 +125,24 @@ def search(request):
 
     context = {'search': search, 'usernames': usernames, 'real_usernames': real_usernames}
     return render(request, 'search.html', context)
+
+
+@login_required
+def follow(request):
+    if request.method =='POST':
+        pk = request.POST.get('profile_id')
+        profile = Profile.objects.get(id=pk)
+        if not request.user in profile.followers.all():
+            profile.followers.add(request.user)
+            messages.success(request, "You are following this profile!")
+        else:
+            profile.followers.remove(request.user)
+            messages.info(request, "You unfollowed this profile!")
+        return redirect(f'/profile/{profile.user.username}/')
+
+
+
+
 
 
 def signup_view(request):
