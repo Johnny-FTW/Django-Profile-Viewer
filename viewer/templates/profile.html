@@ -28,11 +28,13 @@
                                 {% csrf_token %}
                                 <input type="hidden" name="profile_id" value="{{ profile.id }}">
                                 {% if request.user in profile.followers.all %}
-                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark" style="position: relative; width: 150px;">
+                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark"
+                                        style="position: relative; width: 150px;">
                                     Unfollow
                                 </button>
                                 {% else %}
-                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark" style="position: relative; width: 150px;">
+                                <button class="btn btn-outline-dark me-2" type="submit" data-mdb-ripple-color="dark"
+                                        style="position: relative; width: 150px;">
                                     Follow
                                 </button>
 

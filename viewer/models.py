@@ -36,8 +36,11 @@ class Status(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.CharField(max_length=2000)
     date_created = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='liked_statuses')
-    dislikes = models.ManyToManyField(User, related_name='disliked_statuses')
+    likes = models.ManyToManyField(User, related_name='liked_statuses', blank=True)
+    dislikes = models.ManyToManyField(User, related_name='disliked_statuses', blank=True)
+
+    def __str__(self):
+        return f'{self.user}s status'
 
     class Meta:
         ordering = ['-date_created']

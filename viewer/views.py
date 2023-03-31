@@ -11,7 +11,7 @@ from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from viewer.forms import SignUpForm
-from viewer.models import Profile, Gender, Photo
+from viewer.models import Profile, Gender, Photo, Status
 
 
 @login_required
@@ -29,7 +29,6 @@ def edit_profile_page(request):
     photos = profile.photos.all()
     context = {'profile': profile, 'genders':genders, 'photos': photos}
     return render(request, 'edit_profile.html', context)
-
 
 
 @login_required
@@ -106,12 +105,9 @@ def profile(request, username):
 
 @login_required
 def news(request):
-    if request.user.is_authenticated:
-        profile = Profile.objects.get(user=request.user)
-        context = {'profile': profile}
-        return render(request, 'news.html', context)
-    else:
-        return render(request, 'news.html')
+    statuses = Status.objects.all()
+    context = {'statuses': statuses}
+    return render(request, 'news.html', context)
 
 
 def search(request):
@@ -142,6 +138,17 @@ def follow(request):
         return redirect(f'/profile/{profile.user.username}/')
 
 
+@login_required
+def like(request):
+    if request.method=='POST':
+        pk = request.POST.get('status_id')
+        status = Status.objects.get(id=pk)
+        if not request.user in status.likes.all():
+            status.likes.add(request.user)
+        else:
+            status.likes.remove(request.user)
+        return redirect(news)
+
 
 def signup_view(request):
     if request.method == "POST":
@@ -166,6 +173,8 @@ def logout_view(request):
 
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('news')
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
