@@ -140,18 +140,34 @@ def follow(request):
 
 @login_required
 def like(request):
-    if request.method=='POST':
+    if request.method =='POST':
         pk = request.POST.get('status_id')
         status = Status.objects.get(id=pk)
         if not request.user in status.likes.all():
             status.likes.add(request.user)
+            if request.user in status.dislikes.all():
+                status.dislikes.remove(request.user)
         else:
             status.likes.remove(request.user)
         return redirect(news)
 
 
+@login_required
+def dislike(request):
+    if request.method == 'POST':
+        pk = request.POST.get('status_id')
+        status = Status.objects.get(id=pk)
+        if not request.user in status.dislikes.all():
+            status.dislikes.add(request.user)
+            if request.user in status.likes.all():
+                status.likes.remove(request.user)
+        else:
+            status.dislikes.remove(request.user)
+        return redirect(news)
+
+
 def signup_view(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
