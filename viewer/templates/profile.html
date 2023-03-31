@@ -23,7 +23,7 @@
                             <a href="{% url 'edit_profile_page' %}" class="btn btn-outline-dark"
                                data-mdb-ripple-color="dark"
                                style="z-index: 1;">Edit profile</a>
-                            {% else %}
+                            {% elif request.user.is_authenticated %}
                             <form method="post" action="{% url 'follow' %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="profile_id" value="{{ profile.id }}">

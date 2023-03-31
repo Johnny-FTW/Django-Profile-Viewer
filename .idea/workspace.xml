@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="followers and following">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="status and comment models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileViewer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +90,7 @@
       <workItem from="1679668991280" duration="10608000" />
       <workItem from="1679850013461" duration="6574000" />
       <workItem from="1679934475768" duration="10520000" />
-      <workItem from="1680275029621" duration="301000" />
+      <workItem from="1680275029621" duration="1697000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1675621560638</created>
@@ -388,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679945049799</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="status and comment models">
+      <created>1680275345062</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1680275345062</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +433,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="git ignore" />
     <MESSAGE value="gg" />
     <MESSAGE value="template" />
     <MESSAGE value="all" />
@@ -446,7 +457,8 @@
     <MESSAGE value="adding photos" />
     <MESSAGE value="photos styling" />
     <MESSAGE value="followers and following" />
-    <option name="LAST_COMMIT_MESSAGE" value="followers and following" />
+    <MESSAGE value="status and comment models" />
+    <option name="LAST_COMMIT_MESSAGE" value="status and comment models" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

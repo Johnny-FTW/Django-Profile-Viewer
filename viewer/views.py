@@ -104,13 +104,14 @@ def profile(request, username):
     return render(request, 'profile.html', context)
 
 
-def home(request):
+@login_required
+def news(request):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
         context = {'profile': profile}
-        return render(request, 'home.html', context)
+        return render(request, 'news.html', context)
     else:
-        return render(request, 'home.html')
+        return render(request, 'news.html')
 
 
 def search(request):
@@ -142,9 +143,6 @@ def follow(request):
 
 
 
-
-
-
 def signup_view(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
@@ -153,7 +151,7 @@ def signup_view(request):
             Profile.objects.create(user=user)
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect('home')
+            return redirect('news')
         messages.error(request, "Unsuccessful registration. Invalid information.")
     else:
         form = SignUpForm()
@@ -164,7 +162,7 @@ def signup_view(request):
 def logout_view(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
-    return redirect('home')
+    return redirect('login_view')
 
 
 def login_view(request):
@@ -177,7 +175,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect('home')
+                return redirect('news')
             else:
                 messages.error(request,"Invalid username or password.")
         else:
