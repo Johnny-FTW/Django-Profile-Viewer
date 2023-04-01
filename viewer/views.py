@@ -166,6 +166,24 @@ def dislike(request):
             status.dislikes.remove(request.user)
         return redirect(news)
 
+
+@login_required
+def add_comment(request, pk):
+    if request.method == 'POST':
+        pk = request.POST.get('status_id')
+        comment = request.POST.get('comment').strip()
+        if len(comment) > 0:
+            Comment.objects.create(
+                status = Status.objects.get(id=pk),
+                user = request.user,
+                comment = comment
+            )
+            messages.success(request, "Your comment was posted.")
+        else:
+            messages.error(request, "Cant post your comment.")
+    return redirect('/news}/')
+
+
 @login_required
 def edit_comment(request, pk):
     comment = Comment.objects.get(id=pk)

@@ -79,31 +79,42 @@
                         </div>
                     </div>
 
-                    <!--COMMENTtttttttttt POST-->
-                    <!--                    <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">-->
-                    <!--                        <div class="d-flex flex-start w-100">-->
-                    <!--                            <img class="rounded-circle shadow-1-strong me-3"-->
-                    <!--                                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar"-->
-                    <!--                                 width="40"-->
-                    <!--                                 height="40"/>-->
-                    <!--                            <div class="form-outline w-100">-->
-                    <!--                <textarea class="form-control" id="textAreaExample" rows="4"-->
-                    <!--                          style="background: #fff;"></textarea>-->
-                    <!--                                <label class="form-label" for="textAreaExample">Comment</label>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="float-end mt-2 pt-1">-->
-                    <!--                            <button type="button" class="btn btn-primary btn-sm">-->
-                    <!--                                Post comment-->
-                    <!--                            </button>-->
-                    <!--                            <button type="button" class="btn btn-outline-primary btn-sm">-->
-                    <!--                                Cancel-->
-                    <!--                            </button>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+
+                    <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                        <div class="d-flex flex-start w-100">
+                            {% if request.user.profile.profile_picture %}
+                            <img class="rounded-circle shadow-1-strong me-3"
+                                 src="{{ request.user.profile.profile_picture }}" alt="avatar" width="40"
+                                 height="40"/>
+                            {% else %}
+                            <img class="rounded-circle shadow-1-strong me-3"
+                                 src="https://i.pinimg.com/236x/d6/cd/f2/d6cdf2a5daaf96462127cc31fb621851.jpg"
+                                 alt="avatar" width="40"
+                                 height="40"/>
+                            {% endif %}
+
+                            <form method="post" class="w-100">
+                                {% csrf_token %}
+                                <div class="form-outline">
+                <textarea class="form-control" id="textAreaExample" name="comment_text" rows="4"
+                          style="background: #fff;"></textarea>
+                                </div>
+
+                                <div class="float-end mt-2 pt-1">
+                                    <button type="submit" class="btn btn-dark btn-sm">
+                                        Post comment
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-dark btn-sm">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
 
                     {% for comment in comments %}
-                    <!--COMMENTtttttttttt + EDIT-->
                     <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
                         <div class="d-flex flex-start w-100">
 
@@ -131,14 +142,15 @@
                         </p>
                         {% if request.user == comment.user %}
                         <div class="d-flex flex-row-reverse">
-                            <form method="post" action="{% url 'delete_comment' comment.id %}" style="margin-left: 10px;">
+                            <form method="post" action="{% url 'delete_comment' comment.id %}"
+                                  style="margin-left: 10px;">
                                 {% csrf_token %}
                                 <input type="hidden" name="comment_id" value="{{ comment.id }}">
                                 <div class="mbr-section-btn">
-                                <button type="submit" class="btn btn-outline-dark btn-sm">
-                                    Delete
-                                </button>
-                                    </div>
+                                    <button type="submit" class="btn btn-outline-dark btn-sm">
+                                        Delete
+                                    </button>
+                                </div>
                             </form>
                             <div class="mbr-section-btn">
                                 <a href="#edit_comment_{{ comment.id }}" class="btn btn-dark btn-sm mr-2">Edit
@@ -156,7 +168,7 @@
                         </form>
                         {% endif %}
                     </div>
-                    <!--COMMENTtttttttttt-->
+
                     {% endfor %}
                 </div>
             </div>
