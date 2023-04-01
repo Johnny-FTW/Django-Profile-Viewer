@@ -34,7 +34,7 @@ class Profile(Model):
 
 class Status(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    text = models.CharField(max_length=2000)
+    text = models.TextField(max_length=2000)
     date_created = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='liked_statuses', blank=True)
     dislikes = models.ManyToManyField(User, related_name='disliked_statuses', blank=True)
@@ -49,7 +49,7 @@ class Status(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
-    text = models.CharField(max_length=200)
+    text = models.TextField(max_length=2000)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

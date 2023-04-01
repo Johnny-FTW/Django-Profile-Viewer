@@ -130,16 +130,19 @@
                             {{ comment.text }}
                         </p>
                         {% if request.user == comment.user %}
-                        <div class="float-end mt-2 pt-1">
-                            <form method="post" action="{% url 'delete_comment' comment.id %}">
+                        <div class="d-flex flex-row-reverse">
+                            <form method="post" action="{% url 'delete_comment' comment.id %}" style="margin-left: 10px;">
                                 {% csrf_token %}
                                 <input type="hidden" name="comment_id" value="{{ comment.id }}">
-                                <button type="submit" class="btn btn-outline-primary btn-sm">
+                                <div class="mbr-section-btn">
+                                <button type="submit" class="btn btn-outline-dark btn-sm">
                                     Delete
                                 </button>
+                                    </div>
                             </form>
-                            <div class="mbr-section-btn mt-3">
-                                <a href="#edit_comment_{{ comment.id }}" class="btn btn-primary btn-sm">Edit comment</a>
+                            <div class="mbr-section-btn">
+                                <a href="#edit_comment_{{ comment.id }}" class="btn btn-dark btn-sm mr-2">Edit
+                                    comment</a>
                             </div>
                         </div>
                         <form method="post" action="{% url 'edit_comment' comment.id %}"
@@ -148,7 +151,7 @@
                             <input type="hidden" name="comment_id" value="{{ comment.id }}">
                             <textarea class="form-control mt-2" name="comment">{{ comment.text }}</textarea>
                             <div class="text-center mt-2">
-                                <button class="btn btn-success">Save</button>
+                                <button class="btn btn-outline-dark btn-sm">Save changes</button>
                             </div>
                         </form>
                         {% endif %}
