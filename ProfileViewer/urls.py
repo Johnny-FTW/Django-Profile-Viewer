@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from viewer.views import my_profile, news, signup_view, logout_view, login_view, profile, search, edit_profile_page, \
-    edit_profile, follow, like, dislike
+    edit_profile, follow, like, dislike, edit_comment, delete_comment
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,5 +35,8 @@ urlpatterns = [
     path('follow/', follow, name='follow'),
     path('like/', like, name='like'),
     path('dislike/', dislike, name='dislike'),
+
+    path('edit_comment/<pk>', edit_comment, name='edit_comment'),
+    path('delete_comment/<pk>/', delete_comment, name='delete_comment'),
 
 ]

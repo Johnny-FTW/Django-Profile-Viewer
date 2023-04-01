@@ -11,7 +11,7 @@ from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from viewer.forms import SignUpForm
-from viewer.models import Profile, Gender, Photo, Status
+from viewer.models import Profile, Gender, Photo, Status, Comment
 
 
 @login_required
@@ -106,7 +106,8 @@ def profile(request, username):
 @login_required
 def news(request):
     statuses = Status.objects.all()
-    context = {'statuses': statuses}
+    comments = Comment.objects.all()
+    context = {'statuses': statuses, 'comments':comments}
     return render(request, 'news.html', context)
 
 
@@ -164,6 +165,33 @@ def dislike(request):
         else:
             status.dislikes.remove(request.user)
         return redirect(news)
+
+@login_required
+def edit_comment(request, pk):
+    comment = Comment.objects.get(id=pk)
+    if request.user == comment.user:
+        if request.method == 'POST':
+            comment_text = request.POST.get('comment').strip()
+            comment.text = comment_text
+            comment.save()
+            messages.info(request, "Your comment was edited.")
+            return redirect('/news/')
+        context = {'comment':comment}
+        return render(request, 'news.html', context)
+    return redirect('news.html')
+
+
+@login_required
+def delete_comment(request, pk):
+    comment = Comment.objects.get(id=pk)
+    if request.user == comment.user:
+        if request.method == 'POST':
+            comment.delete()
+            messages.info(request, "Your comment was deleted.")
+            return redirect("/news/")
+        context = {'comment': comment}
+        return render(request, 'news.html', context)
+    return redirect("/news/")
 
 
 def signup_view(request):
