@@ -168,7 +168,7 @@ def dislike(request):
 
 
 @login_required
-def add_comment(request, pk):
+def add_comment(request):
     if request.method == 'POST':
         pk = request.POST.get('status_id')
         comment = request.POST.get('comment').strip()
@@ -176,12 +176,12 @@ def add_comment(request, pk):
             Comment.objects.create(
                 status = Status.objects.get(id=pk),
                 user = request.user,
-                comment = comment
+                text = comment
             )
             messages.success(request, "Your comment was posted.")
         else:
             messages.error(request, "Cant post your comment.")
-    return redirect('/news}/')
+    return redirect('/news/')
 
 
 @login_required

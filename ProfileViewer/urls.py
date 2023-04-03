@@ -35,7 +35,7 @@ urlpatterns = [
     path('like/', like, name='like'),
     path('dislike/', dislike, name='dislike'),
 
-    path('add_comment/<pk>/', add_comment, name='add_comment'),
+    path('add_comment', add_comment, name='add_comment'),
     path('edit_comment/<pk>', edit_comment, name='edit_comment'),
     path('delete_comment/<pk>/', delete_comment, name='delete_comment'),
 

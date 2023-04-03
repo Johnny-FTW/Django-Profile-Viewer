@@ -93,11 +93,12 @@
                                  height="40"/>
                             {% endif %}
 
-                            <form method="post" class="w-100">
+                            <form method="post" action="{% url 'add_comment' %}" class="w-100" >
                                 {% csrf_token %}
                                 <div class="form-outline">
-                <textarea class="form-control" id="textAreaExample" name="comment_text" rows="4"
-                          style="background: #fff;"></textarea>
+                                <textarea class="form-control" id="id_comment" name="comment" rows="4"
+                                          style="background: #fff;"></textarea>
+                                    <input type="hidden"  name="status_id" value="{{ status.id }}">
                                 </div>
 
                                 <div class="float-end mt-2 pt-1">
