@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const commentButton = document.querySelector('.comment-button');
-  const commentForm = document.querySelector('.card-footer.py-3.border-0#comment-form');
-  const cancelButton = commentForm.querySelector('.btn-outline-dark');
+  const commentButtons = document.querySelectorAll('.comment-button');
+  const commentForms = document.querySelectorAll('.card-footer.py-3.border-0#comment-form');
+  const cancelButtons = document.querySelectorAll('.btn-outline-dark');
 
-  commentButton.addEventListener('click', () => {
-    commentForm.classList.toggle('d-none');
-  });
+  commentButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      commentForms[index].classList.toggle('d-none');
+    });
 
-  cancelButton.addEventListener('click', () => {
-    commentForm.classList.add('d-none');
+    cancelButtons[index].addEventListener('click', () => {
+      commentForms[index].classList.add('d-none');
+    });
   });
 });

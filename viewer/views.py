@@ -38,7 +38,7 @@ def edit_profile(request):
     genders = Gender.objects.all()
 
     if request.method == 'POST':
-        # Get all photo links from request.POST
+
         photos = request.POST.getlist('photos[]')
 
         profile_picture = request.POST.get('photo').strip()
@@ -49,7 +49,6 @@ def edit_profile(request):
         email = request.POST.get('email').strip()
         gender = request.POST.get('gender', '')
 
-        # Update profile picture if a valid URL is provided
         if profile_picture:
             url_validator = URLValidator()
             try:
@@ -61,7 +60,6 @@ def edit_profile(request):
         else:
             profile.profile_picture = None
 
-        # Update profile fields
         profile.city = city
         profile.about = about
 
@@ -71,10 +69,8 @@ def edit_profile(request):
         else:
             profile.gender = None
 
-        # Create new Photo objects for each photo link
         with transaction.atomic():
-            # Use atomic transaction to ensure data consistency
-            profile.photos.all().delete() # delete existing photos
+            profile.photos.all().delete()
             for photo_link in photos:
                 if photo_link:
                     photo = Photo(link=photo_link)
@@ -82,8 +78,6 @@ def edit_profile(request):
                     profile.photos.add(photo)
 
         profile.save()
-
-        # Update user fields
 
         user.first_name = first_name
         user.last_name = last_name
@@ -123,6 +117,21 @@ def search(request):
 
     context = {'search': search, 'usernames': usernames, 'real_usernames': real_usernames}
     return render(request, 'search.html', context)
+
+
+@login_required
+def post_status(request):
+    if request.method == 'POST':
+        status = request.POST.get('status').strip()
+        if len(status) > 0:
+            Status.objects.create(
+                user = request.user,
+                text = status,
+            )
+            messages.success(request, "Your status was posted.")
+        else:
+            messages.error(request, "Cant post your status.")
+    return redirect('/news/')
 
 
 @login_required
