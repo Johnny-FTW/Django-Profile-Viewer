@@ -3,11 +3,51 @@
 {% block title %}News{% endblock %}
 
 {% block content %}
+<section>
+    <div class="container my-3 py-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+                <div class="card-body" style="background-color: #f8f9fa;">
 
+                    <div class="d-flex flex-start w-100">
+
+                        {% if request.user.profile.profile_picture %}
+                        <img class="rounded-circle shadow-1-strong me-3"
+                             src="{{ request.user.profile.profile_picture }}" alt="avatar" width="40"
+                             height="40"/>
+                        {% else %}
+                        <img class="rounded-circle shadow-1-strong me-3"
+                             src="https://i.pinimg.com/236x/d6/cd/f2/d6cdf2a5daaf96462127cc31fb621851.jpg"
+                             alt="avatar" width="40"
+                             height="40"/>
+                        {% endif %}
+
+                        <form method="post" action="" class="w-100">
+                            {% csrf_token %}
+                            <div class="form-outline">
+                                <textarea class="form-control" id="id_status" name="comment" rows="4"
+                                          style="background: #fff;"></textarea>
+                                <input type="hidden" name="status_id" value="{{ status.id }}">
+                            </div>
+
+                            <div class="float-end mt-2 pt-1">
+                                <button type="submit" class="btn btn-dark btn-sm">
+                                    Post status
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                   </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% for status in statuses %}
 <section>
-    <div class="container my-5 py-5">
+    <div class="container my-3 py-3">
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 col-lg-10 col-xl-8">
                 <div class="card">
@@ -80,7 +120,8 @@
                     </div>
 
 
-                    <div class="card-footer py-3 border-0 d-none" style="background-color: #f8f9fa;" id = "comment-form">
+                    <div class="card-footer py-3 border-0 d-none" style="background-color: #f8f9fa;"
+                         id="comment-form">
                         <div class="d-flex flex-start w-100">
                             {% if request.user.profile.profile_picture %}
                             <img class="rounded-circle shadow-1-strong me-3"
@@ -93,12 +134,12 @@
                                  height="40"/>
                             {% endif %}
 
-                            <form method="post" action="{% url 'add_comment' %}" class="w-100" >
+                            <form method="post" action="{% url 'add_comment' %}" class="w-100">
                                 {% csrf_token %}
                                 <div class="form-outline">
                                 <textarea class="form-control" id="id_comment" name="comment" rows="4"
                                           style="background: #fff;"></textarea>
-                                    <input type="hidden"  name="status_id" value="{{ status.id }}">
+                                    <input type="hidden" name="status_id" value="{{ status.id }}">
                                 </div>
 
                                 <div class="float-end mt-2 pt-1">
@@ -111,6 +152,7 @@
                                     </button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
 
@@ -130,8 +172,9 @@
                                  height="40"/>
                             {% endif %}
                             <div>
-                                <h6 class="fw-bold mb-1"><a href="{% url 'profile' username=comment.user.username %}"
-                                                            class="text-dark text-decoration-none">
+                                <h6 class="fw-bold mb-1"><a
+                                        href="{% url 'profile' username=comment.user.username %}"
+                                        class="text-dark text-decoration-none">
                                     {{comment.user.first_name }} {{ comment.user.last_name }}</a></h6>
                                 <p class="text-muted small mb-0">
                                     {{ comment.date_created }}
