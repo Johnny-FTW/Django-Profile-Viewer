@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="status finalize">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="comment status">
+      <change afterPath="$PROJECT_DIR$/ChatApp/consumers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileViewer/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileViewer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -88,14 +91,8 @@
       <workItem from="1680360669283" duration="16798000" />
       <workItem from="1680543708295" duration="4620000" />
       <workItem from="1680626078176" duration="10677000" />
-      <workItem from="1680796993597" duration="581000" />
-    </task>
-    <task id="LOCAL-00007" summary="change max length of charfield">
-      <created>1675714205192</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1675714205192</updated>
+      <workItem from="1680796993597" duration="599000" />
+      <workItem from="1680799790889" duration="1424000" />
     </task>
     <task id="LOCAL-00008" summary="navbar">
       <created>1675717324109</created>
@@ -433,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680636876208</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="comment status">
+      <created>1680797589289</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1680797589289</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +470,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed profile view" />
     <MESSAGE value="my profile" />
     <MESSAGE value="fixed search" />
     <MESSAGE value="edit profile template" />
@@ -491,7 +494,8 @@
     <MESSAGE value="add comment js" />
     <MESSAGE value="status template" />
     <MESSAGE value="status finalize" />
-    <option name="LAST_COMMIT_MESSAGE" value="status finalize" />
+    <MESSAGE value="comment status" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment status" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
