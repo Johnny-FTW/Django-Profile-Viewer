@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from ChatApp.views import chat_page
+from ChatApp.views import chat_page, index
 from viewer.views import *
 
 urlpatterns = [
@@ -42,7 +42,8 @@ urlpatterns = [
 
     path('post_status', post_status, name='post_status'),
 
-    path('chat', chat_page, name='chat'),
+    path('chat', index, name='index'),
+    path('chat/<str:username>', chat_page, name='chat'),
 
 
 
