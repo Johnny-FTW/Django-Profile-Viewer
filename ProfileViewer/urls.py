@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ChatApp.views import chat_page
 from viewer.views import *
 
 urlpatterns = [
@@ -40,6 +41,8 @@ urlpatterns = [
     path('delete_comment/<pk>/', delete_comment, name='delete_comment'),
 
     path('post_status', post_status, name='post_status'),
+
+    path('chat', chat_page, name='chat'),
 
 
 
