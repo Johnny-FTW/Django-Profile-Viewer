@@ -71,20 +71,11 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'ProfileViewer.wsgi.application'
-
-ASGI_APPLICATION = 'ProfileViewer.asgi.application'
+WSGI_APPLICATION = 'ProfileViewer.wsgi.application'
 
 
-# LEARN CHANNELS
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
-    },
-}
+
+
 
 
 # Database
