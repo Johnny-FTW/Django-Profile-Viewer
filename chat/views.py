@@ -10,3 +10,10 @@ def index(request):
     users = User.objects.exclude(username=request.user.username)
     context={'users': users}
     return render(request, 'index.html', context)
+
+
+@login_required
+def chat(request, username):
+    user = User.objects.get(username=username)
+    context={'username': user}
+    return render(request, 'chat.html', context)

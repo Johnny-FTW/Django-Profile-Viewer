@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from chat.views import index
+from chat.views import index, chat
 from viewer.views import *
 
 urlpatterns = [
@@ -42,7 +42,7 @@ urlpatterns = [
 
     path('post_status', post_status, name='post_status'),
 
-    path('index/', index, name='index')
-
+    path('index/', index, name='index'),
+    path('index/<str:username>/', chat, name='chat'),
 
 ]
