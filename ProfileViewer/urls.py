@@ -42,7 +42,7 @@ urlpatterns = [
 
     path('post_status', post_status, name='post_status'),
 
-    path('index/', index, name='index'),
-    path('index/<str:username>/', chat, name='chat'),
+    path('chat/', index, name='index'),
+    path('chat/<str:username>/', chat, name='chat'),
 
 ]

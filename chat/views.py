@@ -15,5 +15,6 @@ def index(request):
 @login_required
 def chat(request, username):
     user = User.objects.get(username=username)
-    context={'username': user}
+    users = User.objects.exclude(username=request.user.username)
+    context={'username': user, 'users':users}
     return render(request, 'chat.html', context)
