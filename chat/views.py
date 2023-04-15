@@ -1,6 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from chat.forms import ChatMessageForm
+from chat.models import ChatMessage
+
 
 # Create your views here.
 
@@ -16,5 +20,15 @@ def index(request):
 def chat(request, username):
     user = User.objects.get(username=username)
     users = User.objects.exclude(username=request.user.username)
-    context={'username': user, 'users':users}
+    form = ChatMessageForm()
+    chats = ChatMessage.objects.all()
+    if request.method == 'POST':
+        form = ChatMessageForm(request.POST)
+        if form.is_valid():
+            chat_message = form.save(commit=False)
+            chat_message.msg_sender = request.user
+            chat_message.msg_receiver = user
+            chat_message.save()
+            return redirect('chat', username=username)
+    context={'username': user, 'users':users, 'form':form, 'chats':chats }
     return render(request, 'chat.html', context)
