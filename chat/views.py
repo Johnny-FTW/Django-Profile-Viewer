@@ -18,7 +18,7 @@ def index(request):
 
 @login_required
 def chat(request, username):
-    user = User.objects.get(username=username)
+    friend = User.objects.get(username=username)
     users = User.objects.exclude(username=request.user.username)
     form = ChatMessageForm()
     chats = ChatMessage.objects.all()
@@ -27,8 +27,8 @@ def chat(request, username):
         if form.is_valid():
             chat_message = form.save(commit=False)
             chat_message.msg_sender = request.user
-            chat_message.msg_receiver = user
+            chat_message.msg_receiver = friend
             chat_message.save()
             return redirect('chat', username=username)
-    context={'username': user, 'users':users, 'form':form, 'chats':chats }
+    context={'friend': friend, 'users':users, 'form':form, 'chats':chats }
     return render(request, 'chat.html', context)
