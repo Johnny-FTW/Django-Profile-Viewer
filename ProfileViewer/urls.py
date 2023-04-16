@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from chat.views import index, chat
+from chat.views import *
 from viewer.views import *
 
 urlpatterns = [
@@ -44,5 +44,6 @@ urlpatterns = [
 
     path('chat/', index, name='index'),
     path('chat/<str:username>/', chat, name='chat'),
+    path('sent_msg/<str:username>/', sent_messages, name='sent_msg')
 
 ]
