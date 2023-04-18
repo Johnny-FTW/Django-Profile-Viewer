@@ -33,7 +33,7 @@ urlpatterns = [
 
     path('search/', search, name='search'),
     path('follow/', follow, name='follow'),
-    path('like/', like, name='like'),
+    path('news/like/', like, name='like'),
     path('dislike/', dislike, name='dislike'),
 
     path('add_comment', add_comment, name='add_comment'),
@@ -44,6 +44,6 @@ urlpatterns = [
 
     path('chat/', index, name='index'),
     path('chat/<str:username>/', chat, name='chat'),
-    path('sent_msg/<str:username>/', sent_messages, name='sent_msg')
+    path('sent_msg/<str:pk>/', sent_messages, name='sent_msg')
 
 ]

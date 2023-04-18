@@ -36,8 +36,8 @@ def chat(request, username):
     return render(request, 'chat.html', context)
 
 
-def sent_messages(request, username):
-    friend = User.objects.get(username=username)
+def sent_messages(request, pk):
+    friend = User.objects.get(id=pk)
     data = json.loads(request.body)
     new_chat = data["msg"]
     new_chat_message = ChatMessage.objects.create(body=new_chat, msg_sender=request.user, msg_receiver=friend, seen=False)

@@ -13,37 +13,39 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-const csrftoken = getCookie('csrftoken');
+    const csrftoken = getCookie('csrftoken');
 
-let form = document.getElementById("myform")
-form.addEventListener("submit", sendChat)
+    let form = document.getElementById("myform")
+    form.addEventListener("submit", sendChat)
+    function sendChat(e){
+        e.preventDefault()
+        let chatMessage= document.getElementById("id_body").value
+        console.log(chatMessage)
 
-function sendChat(e) {
-    e.preventDefault()
-    let chatMessage = document.getElementById("id_body").value
-    console.log(chatMessage)
+        const data = { msg: chatMessage };
 
-    let url = "{% url 'sent_msg' username=friend.username %}"
-    async function postJSON(data) {
-        try {
-            const response = await fetch(url, {
-                method: "POST", // or 'PUT'
-                headers: {
-                    "Content-Type": "application/json",
-                    'X-CSRFToken': csrftoken,
-                },
-                body: JSON.stringify(data),
-            });
+        let url = "{% url 'sent_msg' id=friend.id %}"
 
-            const result = await response.json();
-            console.log("Success:", result);
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    }
-
-    const data = {msg: chatMessage};
-
-    postJSON(data);
+fetch(url, {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+    'X-CSRFToken': csrftoken
+  },
+  body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+  let chat_body = document.getElementById('chat-body')
+  let chatMessageBox = document.createElement("div")
+  chatMessageBox.classList.add("chat-box-sent")
+  chatMessageBox.innerText = data
+  chat_body.append(chatMessageBox)
+  document.getElementById("id_body").value=""
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
 
 }

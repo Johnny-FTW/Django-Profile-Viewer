@@ -9,6 +9,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 from django.db import transaction
 from django.db.models import Q
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from viewer.forms import SignUpForm
 from viewer.models import Profile, Gender, Photo, Status, Comment
@@ -148,9 +149,22 @@ def follow(request):
         return redirect(f'/profile/{profile.user.username}/')
 
 
+# @login_required
+# def like(request):
+#     if request.method =='POST':
+#         pk = request.POST.get('status_id')
+#         status = Status.objects.get(id=pk)
+#         if not request.user in status.likes.all():
+#             status.likes.add(request.user)
+#             if request.user in status.dislikes.all():
+#                 status.dislikes.remove(request.user)
+#         else:
+#             status.likes.remove(request.user)
+        # return redirect(news)
+
 @login_required
 def like(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         pk = request.POST.get('status_id')
         status = Status.objects.get(id=pk)
         if not request.user in status.likes.all():
@@ -159,7 +173,13 @@ def like(request):
                 status.dislikes.remove(request.user)
         else:
             status.likes.remove(request.user)
-        return redirect(news)
+        like_count = status.likes.count()
+        return JsonResponse({'like_count': like_count})
+    else:
+        # Handle non-POST requests here
+        print('ble')
+        return HttpResponse('Invalid request method')
+
 
 
 @login_required

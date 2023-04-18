@@ -8,37 +8,37 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 col-lg-10 col-xl-8">
                 <div class="card">
-                <div class="card-body" style="background-color: #f8f9fa;">
+                    <div class="card-body" style="background-color: #f8f9fa;">
 
-                    <div class="d-flex flex-start w-100">
+                        <div class="d-flex flex-start w-100">
 
-                        {% if request.user.profile.profile_picture %}
-                        <img class="rounded-circle shadow-1-strong me-3"
-                             src="{{ request.user.profile.profile_picture }}" alt="avatar" width="40"
-                             height="40">
-                        {% else %}
-                        <img class="rounded-circle shadow-1-strong me-3"
-                             src="https://i.pinimg.com/236x/d6/cd/f2/d6cdf2a5daaf96462127cc31fb621851.jpg"
-                             alt="avatar" width="40"
-                             height="40"/>
-                        {% endif %}
+                            {% if request.user.profile.profile_picture %}
+                            <img class="rounded-circle shadow-1-strong me-3"
+                                 src="{{ request.user.profile.profile_picture }}" alt="avatar" width="40"
+                                 height="40">
+                            {% else %}
+                            <img class="rounded-circle shadow-1-strong me-3"
+                                 src="https://i.pinimg.com/236x/d6/cd/f2/d6cdf2a5daaf96462127cc31fb621851.jpg"
+                                 alt="avatar" width="40"
+                                 height="40"/>
+                            {% endif %}
 
-                        <form method="post" action="{% url 'post_status' %}" class="w-100">
-                            {% csrf_token %}
-                            <div class="form-outline">
+                            <form method="post" action="{% url 'post_status' %}" class="w-100">
+                                {% csrf_token %}
+                                <div class="form-outline">
                                 <textarea class="form-control" id="id_status" name="status" rows="4"
                                           style="background: #fff;" placeholder="What's on your mind?"></textarea>
-                            </div>
-                            <label class="form-label" for="id_status"><h6>Write your status here</h6></label>
-                            <div class="float-end mt-2 pt-1">
-                                <button type="submit" class="btn btn-dark btn-sm">
-                                    Post status
-                                </button>
-                            </div>
-                        </form>
+                                </div>
+                                <label class="form-label" for="id_status"><h6>Write your status here</h6></label>
+                                <div class="float-end mt-2 pt-1">
+                                    <button type="submit" class="btn btn-dark btn-sm">
+                                        Post status
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                   </div>
             </div>
         </div>
     </div>
@@ -77,20 +77,15 @@
                             {{ status.text }}
                         </p>
                         <div class="small d-flex justify-content-start">
-                            <form method="POST" action="{% url 'like' %}">
+                            <button id="like-btn-{{ status.id }}"
+                                    class="btn btn-link d-flex align-items-center me-3 text-dark text-decoration-none btn-sm like-button"
+                                    data-status-id="{{ status.id }}"
+                                    data-likes-count="{{ status.likes.count }}"
+                                    data-url="{% url 'like' %}">
                                 {% csrf_token %}
-                                <div class="text-center">
-                                    <p class="mb-1 h6">{{ status.likes.count }}</p>
-                                    <input type="hidden" name="status_id" value="{{ status.id }}">
-                                    <button type="submit"
-                                            class="btn btn-link d-flex align-items-center me-3 text-dark
-                                            text-decoration-none btn-sm"
-                                            name="like">
-                                        <i class="far fa-thumbs-up me-2"></i>
-                                        <p class="mb-0">Like</p>
-                                    </button>
-                                </div>
-                            </form>
+                                <i class="far fa-thumbs-up me-2"></i>
+                                <span id="like-count-{{ status.id }}">{{ status.likes.count }}</span>
+                            </button>
                             <form method="POST" action="{% url 'dislike' %}">
                                 {% csrf_token %}
                                 <div class="text-center">
