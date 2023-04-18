@@ -149,19 +149,6 @@ def follow(request):
         return redirect(f'/profile/{profile.user.username}/')
 
 
-# @login_required
-# def like(request):
-#     if request.method =='POST':
-#         pk = request.POST.get('status_id')
-#         status = Status.objects.get(id=pk)
-#         if not request.user in status.likes.all():
-#             status.likes.add(request.user)
-#             if request.user in status.dislikes.all():
-#                 status.dislikes.remove(request.user)
-#         else:
-#             status.likes.remove(request.user)
-        # return redirect(news)
-
 @login_required
 def like(request):
     if request.method == 'POST':

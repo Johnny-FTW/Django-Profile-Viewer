@@ -42,8 +42,6 @@ urlpatterns = [
 
     path('post_status', post_status, name='post_status'),
 
-    path('chat/', index, name='index'),
-    path('chat/<str:username>/', chat, name='chat'),
-    path('sent_msg/<str:pk>/', sent_messages, name='sent_msg')
+    path('', include('chat.urls')),
 
 ]
