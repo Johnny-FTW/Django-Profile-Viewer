@@ -2,6 +2,7 @@
 {% block title %} Chat {% endblock %}
 {% block content %}
 
+
 <section style="background-color: #eee;">
     <div class="container py-5">
         <div class="row">
@@ -45,57 +46,64 @@
             <div class="col-md-6 col-lg-7 col-xl-8">
                 <h5 class="font-weight-bold mb-3 text-center text-lg-start">Chat with: {{friend.username}}</h5>
                 <ul class="list-unstyled">
-                    {% for chat in chats %}
-                    {% if chat.msg_sender == request.user and chat.msg_receiver == friend %}
-                    <li class="d-flex justify-content-between mb-4">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-                             class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-                        <div class="card w-100">
-                            <div class="card-header d-flex justify-content-between p-3">
-                                <p class="fw-bold mb-0">{{ request.user.username }}</p>
-                                <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
-                            </div>
-                            <div class="card-body">
-                                <p class="mb-0">
-                                    {{ chat }}
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    {% elif chat.msg_sender == friend and chat.msg_receiver == request.user %}
-
-                    <li class="d-flex justify-content-between mb-4">
-                        <div class="card w-100">
-                            <div class="card-header d-flex justify-content-between p-3">
-                                <p class="fw-bold mb-0">{{ friend.username }}</p>
-                                <p class="text-muted small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
-                            </div>
-                            <div class="card-body">
-                                <p class="mb-0">
-                                    {{chat}}
-                                </p>
-                            </div>
-                        </div>
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
-                             class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-
-                    <form action="" id="myform" method="POST">
-
-                        <li class="bg-white mb-3">
-                            <div class="form-outline">
-                                {% csrf_token %}
-                                {{ form.body }}
+                    <div class="chat-body" id="chat-body">
+                        {% for chat in chats %}
+                        {% if chat.msg_sender == request.user and chat.msg_receiver == friend %}
+                        <li class="d-flex justify-content-between mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+                                 class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+                            <div class="card w-100">
+                                <div class="card-header d-flex justify-content-between p-3">
+                                    <p class="fw-bold mb-0">{{ request.user.username }}</p>
+                                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        {{ chat }}
+                                    </p>
+                                </div>
                             </div>
                         </li>
-                        <button type="submit" class="btn btn-info btn-rounded float-end" id = "submit">Send</button>
-                    </form>
+                        {% elif chat.msg_sender == friend and chat.msg_receiver == request.user %}
+
+                        <li class="d-flex justify-content-between mb-4">
+                            <div class="card w-100">
+                                <div class="card-header d-flex justify-content-between p-3">
+                                    <p class="fw-bold mb-0">{{ friend.username }}</p>
+                                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
+                                </div>
+                                <div class="chat-box-sent">
+                                    <p class="mb-0">
+                                        {{chat}}
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+                                 class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+
+                        <form action="" id="myform" method="POST">
+
+                            <li class="bg-white mb-3">
+                                <div class="form-outline">
+                                    {% csrf_token %}
+                                    {{ form.body }}
+                                </div>
+                            </li>
+                            <button type="submit" class="btn btn-info btn-rounded float-end" id="submit">Send</button>
+                        </form>
+                    </div>
                 </ul>
             </div>
         </div>
     </div>
 </section>
+
+
 {% endblock %}
+
+
+
 

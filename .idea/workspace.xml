@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/chat/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat/templates/chat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +112,8 @@
       <workItem from="1681839686934" duration="6474000" />
       <workItem from="1681919408174" duration="385000" />
       <workItem from="1681919811362" duration="1127000" />
-      <workItem from="1681921073009" duration="5048000" />
-    </task>
-    <task id="LOCAL-00025" summary="routes">
-      <created>1676044682189</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1676044682189</updated>
+      <workItem from="1681921073009" duration="5066000" />
+      <workItem from="1682092574305" duration="9670000" />
     </task>
     <task id="LOCAL-00026" summary="sing up view">
       <created>1676123311458</created>
@@ -456,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681846225426</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="path reorganize">
+      <created>1681926191414</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1681926191414</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

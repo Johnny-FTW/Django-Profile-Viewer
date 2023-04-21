@@ -3,7 +3,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from chat.forms import ChatMessageForm
 from chat.models import ChatMessage
 
@@ -14,7 +14,7 @@ from chat.models import ChatMessage
 @login_required
 def index(request):
     users = User.objects.exclude(username=request.user.username)
-    context={'users': users}
+    context = {'users': users}
     return render(request, 'index.html', context)
 
 
@@ -32,14 +32,15 @@ def chat(request, username):
             chat_message.msg_receiver = friend
             chat_message.save()
             return redirect('chat', username=username)
-    context={'friend': friend, 'users':users, 'form':form, 'chats':chats }
+    context = {'friend': friend, 'users': users, 'form': form, 'chats': chats}
     return render(request, 'chat.html', context)
 
 
 def sent_messages(request, username):
-    friend = get_object_or_404(User, username=username)
+    friend = User.objects.get(User, username=username)
     data = json.loads(request.body)
     new_chat = data["msg"]
-    new_chat_message = ChatMessage.objects.create(body=new_chat, msg_sender=request.user, msg_receiver=friend, seen=False)
+    new_chat_message = ChatMessage.objects.create(body=new_chat, msg_sender=request.user, msg_receiver=friend,
+                                                  seen=False)
     print(new_chat)
     return JsonResponse(new_chat_message.body, safe=False)
