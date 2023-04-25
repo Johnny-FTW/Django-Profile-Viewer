@@ -37,10 +37,10 @@ def chat(request, username):
 
 
 def sent_messages(request, username):
-    friend = User.objects.get(User, username=username)
+    friend = User.objects.get(username=username)
     data = json.loads(request.body)
     new_chat = data["msg"]
     new_chat_message = ChatMessage.objects.create(body=new_chat, msg_sender=request.user, msg_receiver=friend,
                                                   seen=False)
     print(new_chat)
-    return JsonResponse(new_chat_message.body, safe=False)
+    return JsonResponse({'body': new_chat_message.body}, safe=False)
