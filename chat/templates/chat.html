@@ -77,7 +77,7 @@
                                     <p class="fw-bold mb-0">{{ friend.username }}</p>
                                     <p class="text-muted small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
                                 </div>
-                                <div class="chat-box-sent">
+                                <div class="card-body">
                                     <p class="mb-0">
                                         {{chat}}
                                     </p>
@@ -89,18 +89,22 @@
                         {% endif %}
                         {% endfor %}
 
-                        <form action="" id="myform" method="POST">
+                        <div class="chat-box-sent" id="chat-box-sent" style="display: none">
 
-                            <li class="bg-white mb-3">
-                                <div class="form-outline">
-                                    {% csrf_token %}
-                                    {{ form.body }}
-                                    <input type="hidden" id="friend-username" value="{{ friend.username }}">
-                                </div>
-                            </li>
-                            <button type="submit" class="btn btn-info btn-rounded float-end" id="submit">Send</button>
-                        </form>
+                        </div>
                     </div>
+                    <form action="" id="myform" method="POST">
+
+                        <li class="bg-white mb-3">
+                            <div class="form-outline">
+                                {% csrf_token %}
+                                {{ form.body }}
+                                <input type="hidden" id="friend-username" value="{{ friend.username }}">
+                            </div>
+                        </li>
+                        <button type="submit" class="btn btn-info btn-rounded float-end" id="submit">Send</button>
+                    </form>
+
                 </ul>
             </div>
         </div>
@@ -133,43 +137,34 @@
 
     function sendChat(e) {
         e.preventDefault()
-        let chatMessage = document.getElementById("id_body").value
-
+        let chatMessage = document.getElementById("id_body").value;
         let friendUsername = document.getElementById("friend-username").value;
 
         console.log(chatMessage)
+        const data = {msg: chatMessage};
+        let url = `/sent_msg/${friendUsername}/`;
 
-        async function postJSON(data) {
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRFToken": csrftoken,
-                    },
-                    body: JSON.stringify(data),
-                });
-
-                const new_chat_message = await response.json();
-                console.log("Success:", new_chat_message);
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
                 let chat_body = document.getElementById('chat-body')
                 let chatMessageBox = document.createElement("div")
                 chatMessageBox.classList.add("chat-box-sent")
-                chatMessageBox.innerHTML = new_chat_message.body
+                chatMessageBox.innerHTML = data.body
                 chat_body.append(chatMessageBox)
                 document.getElementById("id_body").value = ""
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
-
-        const data = {msg: chatMessage};
-        let url = `/sent_msg/${friendUsername}/`;
-        // let url = "{% url 'sent_messages' username=friend.username %}";
-
-
-        postJSON(data);
-
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 
 
