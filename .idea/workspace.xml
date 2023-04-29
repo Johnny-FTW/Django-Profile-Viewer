@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="fixed messages#2">
-      <change afterPath="$PROJECT_DIR$/chat/static/css.css" afterDir="false" />
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="fixed messages#3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/static/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/static/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/static/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/chat/static/css.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat/templates/chat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
@@ -49,19 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\janha\Desktop\Diango_Profile_Viewer\templates" />
@@ -116,14 +117,8 @@
       <workItem from="1682092574305" duration="10486000" />
       <workItem from="1682441869724" duration="7771000" />
       <workItem from="1682531126122" duration="5579000" />
-      <workItem from="1682613864397" duration="5221000" />
-    </task>
-    <task id="LOCAL-00029" summary="register,login,logout">
-      <created>1676187105049</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1676187105049</updated>
+      <workItem from="1682613864397" duration="5289000" />
+      <workItem from="1682747940055" duration="2541000" />
     </task>
     <task id="LOCAL-00030" summary="fixed profile view">
       <created>1676198007055</created>
@@ -461,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682536756943</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="fixed messages#3">
+      <created>1682619204545</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1682619204545</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dislikes of comments" />
     <MESSAGE value="models str representation" />
     <MESSAGE value="edit delete comments" />
     <MESSAGE value="edit models" />
@@ -519,7 +520,8 @@
     <MESSAGE value="js chat json" />
     <MESSAGE value="fixed messages" />
     <MESSAGE value="fixed messages#2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed messages#2" />
+    <MESSAGE value="fixed messages#3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed messages#3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
