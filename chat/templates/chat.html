@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+
+
 {% block title %} Chat {% endblock %}
+
+
 {% block content %}
 
 
@@ -59,8 +63,6 @@
                         {% elif chat.msg_sender == friend and chat.msg_receiver == request.user %}
 
                         <div class="chat-box-received">
-
-
                                         {{chat}}
                             </div>
 
@@ -90,9 +92,11 @@
 </section>
 
 
+<script>
+    const num = {{num}};
+</script>
 
 {% endblock %}
-
 
 
 

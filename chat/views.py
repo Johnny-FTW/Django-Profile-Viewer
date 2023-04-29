@@ -24,6 +24,7 @@ def chat(request, username):
     users = User.objects.exclude(username=request.user.username)
     form = ChatMessageForm()
     chats = ChatMessage.objects.all()
+    rec_chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user)
     if request.method == 'POST':
         form = ChatMessageForm(request.POST)
         if form.is_valid():
@@ -32,7 +33,7 @@ def chat(request, username):
             chat_message.msg_receiver = friend
             chat_message.save()
             return redirect('chat', username=username)
-    context = {'friend': friend, 'users': users, 'form': form, 'chats': chats}
+    context = {'friend': friend, 'users': users, 'form': form, 'chats': chats, 'num': rec_chats.count()}
     return render(request, 'chat.html', context)
 
 
@@ -54,4 +55,14 @@ def received_messages(request, username):
     chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user)
     for chat in chats:
         arr.append(chat.body)
+    return JsonResponse(arr, safe=False)
+
+
+@login_required
+def chat_notification(request):
+    users = User.objects.exclude(username=request.user.username)
+    arr = []
+    for user in users:
+        chats = ChatMessage.objects.filter(msg_sender__id=user.id, msg_receiver=request.user, seen=False )
+        arr.append(chats.count())
     return JsonResponse(arr, safe=False)
