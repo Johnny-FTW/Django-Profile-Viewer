@@ -52,3 +52,21 @@ function sendChat(e) {
             console.error('Error:', error);
         });
 }
+
+setInterval(receiveMessages, 2000)
+function receiveMessages(){
+
+    let friendUsername = document.getElementById("friend-username").value;
+    let url = `/rec_msg/${friendUsername}/`;
+
+    fetch(url)
+
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+}

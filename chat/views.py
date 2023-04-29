@@ -36,6 +36,7 @@ def chat(request, username):
     return render(request, 'chat.html', context)
 
 
+@login_required
 def sent_messages(request, username):
     friend = User.objects.get(username=username)
     data = json.loads(request.body)
@@ -44,3 +45,13 @@ def sent_messages(request, username):
                                                   seen=False)
     print(new_chat)
     return JsonResponse({'body': new_chat_message.body}, safe=False)
+
+
+@login_required
+def received_messages(request, username):
+    friend = User.objects.get(username=username)
+    arr = []
+    chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user)
+    for chat in chats:
+        arr.append(chat.body)
+    return JsonResponse(arr, safe=False)
