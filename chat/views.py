@@ -24,7 +24,8 @@ def chat(request, username):
     users = User.objects.exclude(username=request.user.username)
     form = ChatMessageForm()
     chats = ChatMessage.objects.all()
-    rec_chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user)
+    rec_chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user, seen=False)
+    rec_chats.update(seen=True)
     if request.method == 'POST':
         form = ChatMessageForm(request.POST)
         if form.is_valid():

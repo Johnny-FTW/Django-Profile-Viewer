@@ -53,8 +53,11 @@ function sendChat(e) {
         });
 }
 
-setInterval(receiveMessages, 2000)
+
 let counter = num
+setInterval(receiveMessages, 2000)
+
+
 
 function receiveMessages() {
 
@@ -77,11 +80,12 @@ function receiveMessages() {
                     let chat_body = document.getElementById('chat-body')
                     let chatMessageBox = document.createElement("div")
                     chatMessageBox.classList.add("chat-box-received")
-                    chatMessageBox.innerHTML = lastMsg
+                    chatMessageBox.innerText = lastMsg
                     chat_body.append(chatMessageBox)
                     document.getElementById("id_body").value = ""
 
                 }
+
 
             }
             counter = data.length
@@ -90,5 +94,6 @@ function receiveMessages() {
             console.error('Error:', error);
         });
 }
+
 
 
