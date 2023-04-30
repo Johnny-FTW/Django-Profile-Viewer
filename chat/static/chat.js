@@ -55,12 +55,16 @@ function sendChat(e) {
 
 
 let counter = num
-setInterval(receiveMessages, 2000)
+
+setInterval(receiveMessages, 2000);
+
+
 
 
 
 function receiveMessages() {
 
+    console.log('receiveMessages called'); //t
     let friendUsername = document.getElementById("friend-username").value;
     let url = `/rec_msg/${friendUsername}/`;
 
@@ -72,21 +76,25 @@ function receiveMessages() {
 
             if (data.length === 0) {
             } else {
-                let lastMsg = data[data.length - 1]
 
-                if (counter === data.length) {
+                let lastMsg = data[data.length - 1]
+                console.log('Last message:', lastMsg);
+
+                if (counter === data.length || counter === 0)  {
                     console.log("there is no now chat")
+                    console.log(counter)
+                    console.log(data.length)
                 } else {
+                    console.log(counter) //0
+                    console.log(data.length) //1
+                    console.log('New message received:', lastMsg);
                     let chat_body = document.getElementById('chat-body')
                     let chatMessageBox = document.createElement("div")
                     chatMessageBox.classList.add("chat-box-received")
                     chatMessageBox.innerText = lastMsg
                     chat_body.append(chatMessageBox)
                     document.getElementById("id_body").value = ""
-
                 }
-
-
             }
             counter = data.length
         })
