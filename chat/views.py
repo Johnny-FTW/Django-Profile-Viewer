@@ -2,10 +2,13 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.core.exceptions import PermissionDenied
+from django.db.models import Q
+from django.http import JsonResponse, Http404, HttpResponseForbidden
+from django.shortcuts import render, redirect, get_object_or_404
 from chat.forms import ChatMessageForm
 from chat.models import ChatMessage
+from viewer.models import Profile
 
 
 # Create your views here.
@@ -13,15 +16,26 @@ from chat.models import ChatMessage
 
 @login_required
 def index(request):
-    users = User.objects.exclude(username=request.user.username)
+    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     context = {'users': users}
     return render(request, 'index.html', context)
 
 
 @login_required
 def chat(request, username):
-    friend = User.objects.get(username=username)
-    users = User.objects.exclude(username=request.user.username)
+    friend = get_object_or_404(User, username=username)
+    profile = request.user.profile
+
+    # Check if friend is in the followers list of the logged-in user
+    if friend not in profile.followers.all():
+        return HttpResponseForbidden("You can only chat with your friends.")
+
+    # Check if logged-in user is in the followers list of the friend
+    friend_profile = friend.profile
+    if request.user not in friend_profile.followers.all():
+        return HttpResponseForbidden("You can only chat with your friends.")
+
+    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     form = ChatMessageForm()
     chats = ChatMessage.objects.all()
     rec_chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user, seen=False)
@@ -36,6 +50,9 @@ def chat(request, username):
             return redirect('chat', username=username)
     context = {'friend': friend, 'users': users, 'form': form, 'chats': chats, 'num': rec_chats.count()}
     return render(request, 'chat.html', context)
+
+
+
 
 
 @login_required
