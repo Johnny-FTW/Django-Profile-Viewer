@@ -185,19 +185,6 @@ def dislike(request):
         # Handle non-POST requests here
         return HttpResponse('Invalid request method')
 
-# @login_required
-# def dislike(request):
-#     if request.method == 'POST':
-#         pk = request.POST.get('status_id')
-#         status = Status.objects.get(id=pk)
-#         if not request.user in status.dislikes.all():
-#             status.dislikes.add(request.user)
-#             if request.user in status.likes.all():
-#                 status.likes.remove(request.user)
-#         else:
-#             status.dislikes.remove(request.user)
-#         return redirect(news)
-
 
 @login_required
 def add_comment(request):
@@ -277,7 +264,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
+                messages.success(request, f"You are now logged in as {username}.")
                 return redirect('news')
             else:
                 messages.error(request,"Invalid username or password.")

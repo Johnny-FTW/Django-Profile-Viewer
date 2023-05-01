@@ -8,7 +8,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
-                <h5 class="font-weight-bold mb-3 text-center text-lg-start">Friends</h5>
+                <h5 class="font-weight-bold mb-3 text-center text-lg-start">Friends:</h5>
                 <div class="card">
                     <div class="card-body">
                         <ul class="list-unstyled mb-0">
@@ -28,13 +28,14 @@
                                              width="60">
                                         {% endif %}
                                         <div class="pt-1">
-                                            <a href="{% url 'chat' username=user.username %}"><p class="fw-bold mb-0">
-                                                {{ user.username }}</p></a>
-                                            <p class="small text-muted">Hello, Are you there?</p>
+                                            <a href="{% url 'chat' username=user.username %}"
+                                               class="fw-bold text-dark text-decoration-none">{{ user.first_name }}
+                                                {{ user.last_name }}</a>
+<!--                                            <p class="small text-muted">Hello, Are you there?</p>-->
                                         </div>
                                     </div>
-                                    <div class="pt-1">
-                                        <p class="small text-muted mb-1">Just now</p>
+                                    <div class="pb-3">
+<!--                                        <p class="small text-muted mb-1">Just now</p>-->
                                         <div class="badge bg-danger float-end msg">0</div>
                                     </div>
                                 </a>

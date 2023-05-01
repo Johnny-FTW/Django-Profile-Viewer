@@ -70,7 +70,7 @@ def received_messages(request, username):
 
 @login_required
 def chat_notification(request):
-    users = User.objects.exclude(username=request.user.username)
+    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     arr = []
     for user in users:
         chats = ChatMessage.objects.filter(msg_sender__id=user.id, msg_receiver=request.user, seen=False )

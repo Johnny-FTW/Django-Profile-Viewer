@@ -91,6 +91,8 @@ function receiveMessages() {
                     chatMessageBox.innerText = lastMsg
                     chat_body.append(chatMessageBox)
                     document.getElementById("id_body").value = ""
+
+
                 }
             }
             counter = data.length
