@@ -4,3 +4,6 @@ Introducing Profile Viewer, a new social site that lets you create your own prof
 #python#Django#HTML#CSS#Bootstrap#JS#jQuery#Ajax
 
 # Screens:
+
+![image](https://raw.githubusercontent.com/Johnny-FTW/EventAggregationService/main/imgs/Screenshot_1.png)
+<br>
