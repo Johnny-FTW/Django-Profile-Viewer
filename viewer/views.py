@@ -164,9 +164,7 @@ def like(request):
         return JsonResponse({'like_count': like_count})
     else:
         # Handle non-POST requests here
-        print('ble')
         return HttpResponse('Invalid request method')
-
 
 
 @login_required
@@ -180,7 +178,24 @@ def dislike(request):
                 status.likes.remove(request.user)
         else:
             status.dislikes.remove(request.user)
-        return redirect(news)
+        dislike_count = status.dislikes.count()
+        return JsonResponse({'dislike_count': dislike_count})
+    else:
+        # Handle non-POST requests here
+        return HttpResponse('Invalid request method')
+
+# @login_required
+# def dislike(request):
+#     if request.method == 'POST':
+#         pk = request.POST.get('status_id')
+#         status = Status.objects.get(id=pk)
+#         if not request.user in status.dislikes.all():
+#             status.dislikes.add(request.user)
+#             if request.user in status.likes.all():
+#                 status.likes.remove(request.user)
+#         else:
+#             status.dislikes.remove(request.user)
+#         return redirect(news)
 
 
 @login_required

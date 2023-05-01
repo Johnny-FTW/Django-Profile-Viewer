@@ -34,7 +34,7 @@ urlpatterns = [
     path('search/', search, name='search'),
     path('follow/', follow, name='follow'),
     path('news/like/', like, name='like'),
-    path('dislike/', dislike, name='dislike'),
+    path('news/dislike/', dislike, name='dislike'),
 
     path('add_comment', add_comment, name='add_comment'),
     path('edit_comment/<pk>', edit_comment, name='edit_comment'),

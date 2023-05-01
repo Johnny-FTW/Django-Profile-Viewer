@@ -86,30 +86,25 @@
                                 <i class="far fa-thumbs-up me-2"></i>
                                 <span id="like-count-{{ status.id }}">{{ status.likes.count }}</span>
                             </button>
-                            <form method="POST" action="{% url 'dislike' %}">
+                            <button id="dislike-btn-{{ status.id }}"
+                                    class="btn btn-link d-flex align-items-center me-3 text-dark text-decoration-none btn-sm dislike-button"
+                                    data-status-id="{{ status.id }}"
+                                    data-likes-count="{{ status.dislikes.count }}"
+                                    data-url="{% url 'dislike' %}">
                                 {% csrf_token %}
-                                <div class="text-center">
-                                    <p class="mb-1 h6">{{ status.dislikes.count }}</p>
-                                    <input type="hidden" name="status_id" value="{{ status.id }}">
-                                    <button type="submit"
-                                            class="btn btn-link d-flex align-items-center me-3 text-dark
-                                                text-decoration-none btn-sm"
-                                            name="dislike">
-                                        <i class="far fa-thumbs-down me-2"></i>
-                                        <p class="mb-0">Dislike</p>
-                                    </button>
-                                </div>
-                            </form>
-                            <div class="text-center">
-                                <p class="mb-1 h6">{{ status.comment_set.count }}</p>
-                                <button type="submit"
-                                        class="btn btn-link d-flex align-items-center me-3 text-dark
+                                <i class="far fa-thumbs-down me-2"></i>
+                                <span id="dislike-count-{{ status.id }}">{{ status.dislikes.count }}</span>
+                            </button>
+
+
+                            <button type="submit"
+                                    class="btn btn-link d-flex align-items-center me-3 text-dark
                                         text-decoration-none btn-sm comment-button"
-                                        name="comment">
-                                    <i class="far fa-comment-dots me-2"></i>
-                                    <p class="mb-0">Comment</p>
-                                </button>
-                            </div>
+                                    name="comment">
+                                <i class="far fa-comment-dots me-2"></i>
+                                <span>{{ status.comment_set.count }}</span>
+                            </button>
+
                         </div>
                     </div>
 
