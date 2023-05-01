@@ -1,18 +1,13 @@
 import json
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.exceptions import PermissionDenied
-from django.db.models import Q
-from django.http import JsonResponse, Http404, HttpResponseForbidden
+from django.http import JsonResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from chat.forms import ChatMessageForm
 from chat.models import ChatMessage
-from viewer.models import Profile
 
 
 # Create your views here.
-
 
 @login_required
 def index(request):
@@ -50,9 +45,6 @@ def chat(request, username):
             return redirect('chat', username=username)
     context = {'friend': friend, 'users': users, 'form': form, 'chats': chats, 'num': rec_chats.count()}
     return render(request, 'chat.html', context)
-
-
-
 
 
 @login_required

@@ -59,9 +59,6 @@ let counter = num
 setInterval(receiveMessages, 2000);
 
 
-
-
-
 function receiveMessages() {
 
     console.log('receiveMessages called'); //t

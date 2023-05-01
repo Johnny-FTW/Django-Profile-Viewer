@@ -100,7 +100,8 @@ def profile(request, username):
 
 @login_required
 def news(request):
-    statuses = Status.objects.all()
+    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
+    statuses = Status.objects.filter(user__in=users)
     comments = Comment.objects.all()
     context = {'statuses': statuses, 'comments':comments}
     return render(request, 'news.html', context)
