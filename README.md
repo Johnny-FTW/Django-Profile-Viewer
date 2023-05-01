@@ -13,7 +13,7 @@ Introducing Profile Viewer, a new social site that lets you create your own prof
 <br>
 ### Add some photos
 ![image](https://github.com/Johnny-FTW/Django-Profile-Viewer/blob/main/screens/3.png)
-### Find other people by first name, lastname or username
+### Find other people by first name, lastname or username and follow them
 ![image](https://github.com/Johnny-FTW/Django-Profile-Viewer/blob/main/screens/4.png)
 <br>
 ### When you are following each other you can see statuses, comment them, like and dislike them
