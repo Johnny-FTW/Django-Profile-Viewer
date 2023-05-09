@@ -92,7 +92,6 @@ def edit_profile(request):
 
 def followers_page(request, username):
     user = User.objects.get(username=username)
-    print(user)
     profile = Profile.objects.get(user=user)
     followers = profile.followers.all()
     context = {'followers': followers}
