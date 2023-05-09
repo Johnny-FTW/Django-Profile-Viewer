@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="screens">
-      <change afterPath="$PROJECT_DIR$/viewer/templates/followers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileViewer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="followers page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +27,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -123,21 +117,7 @@
       <workItem from="1682843091684" duration="15752000" />
       <workItem from="1682929870295" duration="15724000" />
       <workItem from="1682957904090" duration="2078000" />
-      <workItem from="1683647096340" duration="5324000" />
-    </task>
-    <task id="LOCAL-00040" summary="updating profile#3">
-      <created>1679853893465</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1679853893465</updated>
-    </task>
-    <task id="LOCAL-00041" summary="adding photos">
-      <created>1679857853322</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1679857853322</updated>
+      <workItem from="1683647096340" duration="5623000" />
     </task>
     <task id="LOCAL-00042" summary="photos styling">
       <created>1679940040286</created>
@@ -468,7 +448,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682959285517</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="followers page">
+      <created>1683653053994</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1683653053994</updated>
+    </task>
+    <task id="LOCAL-00090" summary="followers page">
+      <created>1683653121931</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1683653121932</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chat app4" />
     <MESSAGE value="chat app5" />
     <MESSAGE value="chat app6" />
     <MESSAGE value="chat app" />
@@ -526,7 +519,8 @@
     <MESSAGE value="news only friends" />
     <MESSAGE value="style buttons" />
     <MESSAGE value="screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="screens" />
+    <MESSAGE value="followers page" />
+    <option name="LAST_COMMIT_MESSAGE" value="followers page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
