@@ -90,6 +90,15 @@ def edit_profile(request):
     return render(request, 'edit_profile.html', context={'profile': profile, 'genders': genders, 'photos': photos})
 
 
+def followers_page(request, username):
+    user = User.objects.get(username=username)
+    print(user)
+    profile = Profile.objects.get(user=user)
+    followers = profile.followers.all()
+    context = {'followers': followers}
+    return render(request, 'followers.html', context)
+
+
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)

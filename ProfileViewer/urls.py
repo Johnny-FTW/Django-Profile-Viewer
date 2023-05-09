@@ -25,6 +25,7 @@ urlpatterns = [
     path('my_profile/edit_profile/', edit_profile_page, name='edit_profile_page'),
     path('edit_profile', edit_profile, name='edit_profile'),
     path('profile/<str:username>/', profile, name ='profile'),
+    path('profile/followers/<str:username>/', followers_page, name='followers_page'),
     path('news/',news, name='news'),
 
     path('signup/', signup_view, name='signup_view'),
