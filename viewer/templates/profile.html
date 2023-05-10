@@ -65,7 +65,7 @@
                                 <p class="small text-muted mb-0">Followers</p>
                             </div>
                             <div>
-                                <p class="mb-1 h5">{{ profile.user.following.count }}</p>
+                                <a href="{% url 'following_page' username=user.username %}"><p class="mb-1 h5">{{ profile.user.following.count }}</p></a>
                                 <p class="small text-muted mb-0">Following</p>
                             </div>
                         </div>

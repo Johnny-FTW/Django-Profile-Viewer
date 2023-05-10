@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="followers in profile">
-      <change afterPath="$PROJECT_DIR$/viewer/templates/following.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileViewer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="following page">
+      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +120,7 @@
       <workItem from="1682929870295" duration="15724000" />
       <workItem from="1682957904090" duration="2078000" />
       <workItem from="1683647096340" duration="6498000" />
-      <workItem from="1683740517300" duration="1619000" />
-    </task>
-    <task id="LOCAL-00044" summary="status and comment models">
-      <created>1680275345062</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1680275345062</updated>
+      <workItem from="1683740517300" duration="2069000" />
     </task>
     <task id="LOCAL-00045" summary="news">
       <created>1680276871576</created>
@@ -468,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683654028205</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="following page">
+      <created>1683742428915</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1683742428916</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chat app6" />
     <MESSAGE value="chat app" />
     <MESSAGE value="chat app-navbar" />
     <MESSAGE value="starting chat page" />
@@ -526,7 +522,8 @@
     <MESSAGE value="screens" />
     <MESSAGE value="followers page" />
     <MESSAGE value="followers in profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="followers in profile" />
+    <MESSAGE value="following page" />
+    <option name="LAST_COMMIT_MESSAGE" value="following page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
