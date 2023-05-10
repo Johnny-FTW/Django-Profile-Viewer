@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Following {% endblock %}
+
+{% block content %}
+
+{% if following %}
+<h3>Following:</h3>
+<ul>
+    {% for follow in following %}
+    <li><a href="{% url 'profile' username=follow %}">{{ follow.user.first_name }} {{ follow.user.last_name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3>No following</h3>
+{% endif %}
+
+
+{% endblock %}

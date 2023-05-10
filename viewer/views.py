@@ -98,6 +98,13 @@ def followers_page(request, username):
     return render(request, 'followers.html', context)
 
 
+def following_page(request, username):
+    user = User.objects.get(username=username)
+    following = user.following.all()
+    context = {'following': following}
+    return render(request, 'following.html', context)
+
+
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)
