@@ -167,6 +167,7 @@ def follow(request):
         return redirect(f'/profile/{profile.user.username}/')
 
 
+
 @login_required
 def like(request):
     if request.method == 'POST':
