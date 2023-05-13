@@ -4,15 +4,40 @@
 
 {% block content %}
 
+
 {% if followers %}
-<h3>Followers:</h3>
-<ul>
-    {% for follower in followers %}
-    <li><a href="{% url 'profile' username=follower %}">{{ follower.first_name }} {{ follower.last_name }}</a></li>
-    {% endfor %}
-</ul>
+<br>
+<div class="row d-flex justify-content-center">
+    <div class="col-10 align-items-center">
+        <h2>Followers</h2>
+        <table class="table table-hover table-info">
+            <tbody>
+            {% for follower in followers %}
+            <tr>
+                {% if status.user.profile.profile_picture %}
+                <td><img class="rounded-circle shadow-1-strong me-3"
+                         src="{{ status.user.profile.profile_picture }}" alt="avatar" width="60"
+                         height="60"/></td>
+                {% else %}
+                <td><img class="rounded-circle shadow-1-strong me-3"
+                         src="/static/profile_picture/profile_picture.jpg"
+                         alt="avatar" width="60"
+                         height="60"/></td>
+                {% endif %}
+                <td style="vertical-align: middle; width: 100%;" class="text-left"><h4>{{ follower.first_name }}
+                    {{ follower.last_name }}</h4></td>
+
+                <td style="vertical-align: middle; width: 0;" class="text-right">
+                    <button class="btn btn-outline btn-dark">Follow</button>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
 {% else %}
-<h3>No followers</h3>
 {% endif %}
 
 
