@@ -14,9 +14,9 @@
             <tbody>
             {% for follower in followers %}
             <tr>
-                {% if status.user.profile.profile_picture %}
+                {% if follower.profile.profile_picture %}
                 <td><img class="rounded-circle shadow-1-strong me-3"
-                         src="{{ status.user.profile.profile_picture }}" alt="avatar" width="60"
+                         src="{{ follower.profile.profile_picture }}" alt="avatar" width="60"
                          height="60"/></td>
                 {% else %}
                 <td><img class="rounded-circle shadow-1-strong me-3"
@@ -24,11 +24,12 @@
                          alt="avatar" width="60"
                          height="60"/></td>
                 {% endif %}
-                <td style="vertical-align: middle; width: 100%;" class="text-left"><h4>{{ follower.first_name }}
-                    {{ follower.last_name }}</h4></td>
+                <td style="vertical-align: middle; width: 100%;" class="text-left"><a href="{% url 'profile' username=follower.username %}"
+                                       class="text-dark text-decoration-none"><h4>{{ follower.first_name }}
+                    {{ follower.last_name }}</h4></a></td>
 
                 <td style="vertical-align: middle; width: 0;" class="text-right">
-                    <button class="btn btn-outline btn-dark">Follow</button>
+                    <button class="btn btn-outline btn-lg btn-dark">Follow</button>
                 </td>
             </tr>
             {% endfor %}

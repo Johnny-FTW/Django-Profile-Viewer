@@ -90,6 +90,7 @@ def edit_profile(request):
     return render(request, 'edit_profile.html', context={'profile': profile, 'genders': genders, 'photos': photos})
 
 
+@login_required
 def followers_page(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)
@@ -98,6 +99,7 @@ def followers_page(request, username):
     return render(request, 'followers.html', context)
 
 
+@login_required
 def following_page(request, username):
     user = User.objects.get(username=username)
     following = user.following.all()
