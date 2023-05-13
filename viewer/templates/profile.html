@@ -61,11 +61,16 @@
                                 <p class="small text-muted mb-0">Photos</p>
                             </div>
                             <div class="px-3">
-                                <a href="{% url 'followers_page' username=user.username %}"><p class="mb-1 h5">{{ profile.followers.count }}</p></a>
+                                <a href="{% url 'followers_page' username=user.username %}"
+                                   style="text-decoration: none; color: black"><p class="mb-1 h5">{{ profile.followers.count }}</p>
+                                </a>
+
                                 <p class="small text-muted mb-0">Followers</p>
                             </div>
                             <div>
-                                <a href="{% url 'following_page' username=user.username %}"><p class="mb-1 h5">{{ profile.user.following.count }}</p></a>
+                                <a href="{% url 'following_page' username=user.username %}"
+                                   style="text-decoration: none; color: black"><p class="mb-1 h5">
+                                    {{ profile.user.following.count }}</p></a>
                                 <p class="small text-muted mb-0">Following</p>
                             </div>
                         </div>
