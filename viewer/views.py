@@ -116,7 +116,7 @@ def profile(request, username):
 @login_required
 def news(request):
     users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
-    statuses = Status.objects.filter(user__in=users)
+    statuses = Status.objects.filter(Q(user__in=users) | Q(user=request.user))
     comments = Comment.objects.all()
     context = {'statuses': statuses, 'comments':comments}
     return render(request, 'news.html', context)
@@ -264,7 +264,7 @@ def signup_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    messages.info(request, "You have successfully logged out.")
+    messages.info(request, "You have been successfully logged out.")
     return redirect('login_view')
 
 
