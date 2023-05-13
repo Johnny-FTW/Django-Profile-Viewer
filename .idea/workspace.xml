@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="fixed statuses of creator">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="default profile picture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat/templates/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/news.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +126,7 @@
       <workItem from="1683647096340" duration="6498000" />
       <workItem from="1683740517300" duration="2623000" />
       <workItem from="1683831867105" duration="331000" />
-      <workItem from="1683964783654" duration="8494000" />
-    </task>
-    <task id="LOCAL-00051" summary="add comment form">
-      <created>1680377902209</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1680377902209</updated>
+      <workItem from="1683964783654" duration="9584000" />
     </task>
     <task id="LOCAL-00052" summary="add comment">
       <created>1680547288449</created>
@@ -468,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683972009514</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="default profile picture">
+      <created>1683974598802</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1683974598802</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="likes with ajax" />
     <MESSAGE value="path reorganize" />
     <MESSAGE value="js chat json" />
     <MESSAGE value="fixed messages" />
@@ -526,7 +528,8 @@
     <MESSAGE value="sign up style" />
     <MESSAGE value="style profile" />
     <MESSAGE value="fixed statuses of creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed statuses of creator" />
+    <MESSAGE value="default profile picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="default profile picture" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
