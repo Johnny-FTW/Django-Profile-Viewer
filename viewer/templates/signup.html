@@ -3,12 +3,16 @@
 {% block title %}SignUp{% endblock %}
 
 {% block content %}
+<br>
+<div class="container">
     <div class="signup_form">
         <h2>Sign up</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" id="id_submit">Sign Up</button>
+            <button type="submit" id="id_submit" class="btn btn-dark">Sign Up</button>
+            Already have an account? Log In <a href="/" id="id_sign_up">Here.</a>
         </form>
     </div>
+</div>
 {% endblock %}
