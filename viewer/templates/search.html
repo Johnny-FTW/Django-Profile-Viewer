@@ -5,46 +5,69 @@
 <br>
 
 <div class="row g-4">
-  {% if real_usernames %}
+    {% if real_usernames %}
     <h3>Real names:</h3>
-        {% for real_username in real_usernames %}
+    {% for real_username in real_usernames %}
 
     <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
             <div class="card-body text-center">
-              {% if real_username.profile.profile_picture %}
-              <img class="rounded-circle shadow-1-strong me-3"
-                                 src="{{ real_username.profile.profile_picture }}" alt="avatar" width="150"
-                                 height="150"/>
-              {% else %}
-              <img class="rounded-circle shadow-1-strong me-3"
-                                 src="/static/profile_picture/profile_picture.jpg" alt="avatar" width="150"
-                                 height="150"/>
-              {% endif %}
+                {% if real_username.profile.profile_picture %}
+                <img class="rounded-circle shadow-1-strong me-3"
+                     src="{{ real_username.profile.profile_picture }}" alt="avatar" width="150"
+                     height="150"/>
+                {% else %}
+                <img class="rounded-circle shadow-1-strong me-3"
+                     src="/static/profile_picture/profile_picture.jpg" alt="avatar" width="150"
+                     height="150"/>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{real_username.first_name}} {{real_username.last_name}}</h5>
                     <p class="card-text">({{real_username.username}})</p>
                     <h6 class="card-title">Followers: {{ real_username.profile.followers.count }}</h6>
-                    <a href="{% url 'profile' username=real_username.username %}" class="btn btn-dark btn-lg">View Profile</a>
+                    <a href="{% url 'profile' username=real_username.username %}" class="btn btn-dark btn-lg">View
+                        Profile</a>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
 
-  {% endif %}
-</div>
+    {% endif %}
 
-  {% if usernames %}
+
+{% if usernames %}
 <br>
-    <h3>Usernames:</h3>
-    <ul>
-    {% for username in usernames %}
-      <li><a href="{% url 'profile' username=username.username %}">{{ username.username }}</a></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
+<h3>Usernames:</h3>
 
+{% for username in usernames %}
+<div class="col-md-6 col-lg-3">
+    <div class="card bg-light">
+        <div class="card-body text-center">
+            {% if username.profile.profile_picture %}
+            <img class="rounded-circle shadow-1-strong me-3"
+                 src="{{ username.profile.profile_picture }}" alt="avatar" width="150"
+                 height="150"/>
+            {% else %}
+            <img class="rounded-circle shadow-1-strong me-3"
+                 src="/static/profile_picture/profile_picture.jpg" alt="avatar" width="150"
+                 height="150"/>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{username.username}}</h5>
+                <p class="card-text">({{username.first_name}} {{username.last_name}})</p>
+                <h6 class="card-title">Followers: {{ username.profile.followers.count }}</h6>
+                <a href="{% url 'profile' username=username.username %}" class="btn btn-dark btn-lg">View
+                    Profile</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+{% endfor %}
+
+{% endif %}
+</div>
+<br>
 
 {% endblock %}
