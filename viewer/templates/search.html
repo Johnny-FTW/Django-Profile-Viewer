@@ -2,6 +2,30 @@
 
 
 {% block content %}
+<br>
+
+<div class="row g-4">
+  {% if real_usernames %}
+    <h3>Real names:</h3>
+        {% for real_username in real_usernames %}
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card bg-light">
+            <div class="card-body text-center">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">AAAAAAAA</h5>
+                    <p class="card-text">BBbBBBB</p>
+                    <h6 class="card-title">10</h6>
+                    <a href="" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+  {% endif %}
+</div>
 
   {% if usernames %}
     <h3>Usernames:</h3>
@@ -12,13 +36,6 @@
     </ul>
   {% endif %}
 
-  {% if real_usernames %}
-    <h3>Real Usernames:</h3>
-    <ul>
-    {% for real_username in real_usernames %}
-      <li><a href="{% url 'profile' username=real_username.username %}">{{ real_username.first_name }} {{ real_username.last_name }}</a></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
+</div>
 
 {% endblock %}
