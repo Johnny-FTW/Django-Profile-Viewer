@@ -163,7 +163,7 @@ def follow(request):
             messages.success(request, "You are following this profile!")
         else:
             profile.followers.remove(request.user)
-            messages.info(request, "You unfollowed this profile!")
+            messages.warning(request, "You unfollowed this profile!")
         return redirect(f'/profile/{profile.user.username}/')
 
 
@@ -229,7 +229,7 @@ def edit_comment(request, pk):
             comment_text = request.POST.get('comment').strip()
             comment.text = comment_text
             comment.save()
-            messages.info(request, "Your comment was edited.")
+            messages.warning(request, "Your comment was edited.")
             return redirect('/news/')
         context = {'comment':comment}
         return render(request, 'news.html', context)
@@ -242,7 +242,7 @@ def delete_comment(request, pk):
     if request.user == comment.user:
         if request.method == 'POST':
             comment.delete()
-            messages.info(request, "Your comment was deleted.")
+            messages.warning(request, "Your comment was deleted.")
             return redirect("/news/")
         context = {'comment': comment}
         return render(request, 'news.html', context)
@@ -267,7 +267,7 @@ def signup_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    messages.info(request, "You have been successfully logged out.")
+    messages.warning(request, "You have been successfully logged out.")
     return redirect('login_view')
 
 

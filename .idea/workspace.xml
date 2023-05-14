@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="search real names">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="search usernames names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,21 +124,7 @@
       <workItem from="1683740517300" duration="2623000" />
       <workItem from="1683831867105" duration="331000" />
       <workItem from="1683964783654" duration="22726000" />
-      <workItem from="1684048192131" duration="7059000" />
-    </task>
-    <task id="LOCAL-00059" summary="chat app4">
-      <created>1680978046726</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1680978046726</updated>
-    </task>
-    <task id="LOCAL-00060" summary="chat app4">
-      <created>1680978053559</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1680978053559</updated>
+      <workItem from="1684048192131" duration="7805000" />
     </task>
     <task id="LOCAL-00061" summary="chat app5">
       <created>1680978574252</created>
@@ -469,7 +455,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684055211840</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="search real names">
+      <created>1684055684632</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1684055684632</updated>
+    </task>
+    <task id="LOCAL-00109" summary="search usernames names">
+      <created>1684055698779</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1684055698779</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="notifications" />
     <MESSAGE value="messages" />
     <MESSAGE value="messages fixed" />
     <MESSAGE value="likes dislikes" />
@@ -527,7 +526,8 @@
     <MESSAGE value="following list" />
     <MESSAGE value="search style" />
     <MESSAGE value="search real names" />
-    <option name="LAST_COMMIT_MESSAGE" value="search real names" />
+    <MESSAGE value="search usernames names" />
+    <option name="LAST_COMMIT_MESSAGE" value="search usernames names" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
