@@ -12,12 +12,20 @@
     <div class="col-md-6 col-lg-3">
         <div class="card bg-light">
             <div class="card-body text-center">
-                <img src="" class="card-img-top" alt="...">
+              {% if real_username.profile.profile_picture %}
+              <img class="rounded-circle shadow-1-strong me-3"
+                                 src="{{ real_username.profile.profile_picture }}" alt="avatar" width="150"
+                                 height="150"/>
+              {% else %}
+              <img class="rounded-circle shadow-1-strong me-3"
+                                 src="/static/profile_picture/profile_picture.jpg" alt="avatar" width="150"
+                                 height="150"/>
+              {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">AAAAAAAA</h5>
-                    <p class="card-text">BBbBBBB</p>
-                    <h6 class="card-title">10</h6>
-                    <a href="" class="btn btn-primary">View Profile</a>
+                    <h5 class="card-title">{{real_username.first_name}} {{real_username.last_name}}</h5>
+                    <p class="card-text">({{real_username.username}})</p>
+                    <h6 class="card-title">Followers: {{ real_username.profile.followers.count }}</h6>
+                    <a href="{% url 'profile' username=real_username.username %}" class="btn btn-dark btn-lg">View Profile</a>
                 </div>
             </div>
         </div>
@@ -28,6 +36,7 @@
 </div>
 
   {% if usernames %}
+<br>
     <h3>Usernames:</h3>
     <ul>
     {% for username in usernames %}
