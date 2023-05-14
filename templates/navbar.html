@@ -25,6 +25,14 @@
                     <a class="nav-link active" href="{% url 'index' %}">Chat</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'followers_page' username=request.user %}">Followers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'following_page' username=request.user %}">Following</a>
+                </li>
+
                 {% endif %}
 
 
