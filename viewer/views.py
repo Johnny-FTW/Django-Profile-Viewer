@@ -182,7 +182,6 @@ def like(request):
         like_count = status.likes.count()
         return JsonResponse({'like_count': like_count})
     else:
-        # Handle non-POST requests here
         return HttpResponse('Invalid request method')
 
 
@@ -200,7 +199,6 @@ def dislike(request):
         dislike_count = status.dislikes.count()
         return JsonResponse({'dislike_count': dislike_count})
     else:
-        # Handle non-POST requests here
         return HttpResponse('Invalid request method')
 
 
@@ -231,7 +229,7 @@ def edit_comment(request, pk):
             comment.save()
             messages.warning(request, "Your comment was edited.")
             return redirect('/news/')
-        context = {'comment':comment}
+        context = {'comment': comment}
         return render(request, 'news.html', context)
     return redirect('news.html')
 

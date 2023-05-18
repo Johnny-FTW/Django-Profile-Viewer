@@ -73,6 +73,6 @@ def chat_notification(request):
     users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     arr = []
     for user in users:
-        chats = ChatMessage.objects.filter(msg_sender__id=user.id, msg_receiver=request.user, seen=False )
+        chats = ChatMessage.objects.filter(msg_sender__id=user.id, msg_receiver=request.user, seen=False)
         arr.append(chats.count())
     return JsonResponse(arr, safe=False)
