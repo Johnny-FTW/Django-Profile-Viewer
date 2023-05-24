@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="clear code">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileViewer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -128,14 +130,8 @@
       <workItem from="1684339256080" duration="82000" />
       <workItem from="1684423838364" duration="1366000" />
       <workItem from="1684522996159" duration="1000" />
-      <workItem from="1684857839238" duration="1645000" />
-    </task>
-    <task id="LOCAL-00064" summary="chat app">
-      <created>1681323870742</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1681323870742</updated>
+      <workItem from="1684857839238" duration="1789000" />
+      <workItem from="1684954558932" duration="2193000" />
     </task>
     <task id="LOCAL-00065" summary="chat app">
       <created>1681326501927</created>
@@ -473,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684427339960</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="background">
+      <created>1684859672840</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1684859672841</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="messages, chat with friends only" />
     <MESSAGE value="news only friends" />
     <MESSAGE value="style buttons" />
     <MESSAGE value="screens" />
@@ -531,7 +533,8 @@
     <MESSAGE value="flash messages" />
     <MESSAGE value="added followers and following to navbar" />
     <MESSAGE value="clear code" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear code" />
+    <MESSAGE value="background" />
+    <option name="LAST_COMMIT_MESSAGE" value="background" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

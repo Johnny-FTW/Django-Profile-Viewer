@@ -76,3 +76,7 @@ def chat_notification(request):
         chats = ChatMessage.objects.filter(msg_sender__id=user.id, msg_receiver=request.user, seen=False)
         arr.append(chats.count())
     return JsonResponse(arr, safe=False)
+
+
+def test(request):
+    return render(request, 'chat2.html')

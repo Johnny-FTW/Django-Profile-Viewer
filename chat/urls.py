@@ -8,4 +8,5 @@ urlpatterns = [
     path('sent_msg/<str:username>/', sent_messages, name='sent_messages'),
     path('rec_msg/<str:username>/', received_messages, name='received_messages'),
     path('notification', chat_notification, name='notification'),
+    path('test/', test, name='test'),
 ]
