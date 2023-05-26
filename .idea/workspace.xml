@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="background">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="addons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileViewer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/followers.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/followers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/following.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/following.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -131,14 +131,8 @@
       <workItem from="1684423838364" duration="1366000" />
       <workItem from="1684522996159" duration="1000" />
       <workItem from="1684857839238" duration="1789000" />
-      <workItem from="1684954558932" duration="2193000" />
-    </task>
-    <task id="LOCAL-00065" summary="chat app">
-      <created>1681326501927</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1681326501927</updated>
+      <workItem from="1684954558932" duration="2327000" />
+      <workItem from="1685122867868" duration="3440000" />
     </task>
     <task id="LOCAL-00066" summary="chat app-navbar">
       <created>1681326762249</created>
@@ -476,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684859672841</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="addons">
+      <created>1684956909513</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1684956909513</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="news only friends" />
     <MESSAGE value="style buttons" />
     <MESSAGE value="screens" />
     <MESSAGE value="followers page" />
@@ -534,7 +534,8 @@
     <MESSAGE value="added followers and following to navbar" />
     <MESSAGE value="clear code" />
     <MESSAGE value="background" />
-    <option name="LAST_COMMIT_MESSAGE" value="background" />
+    <MESSAGE value="addons" />
+    <option name="LAST_COMMIT_MESSAGE" value="addons" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
