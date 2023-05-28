@@ -140,3 +140,4 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
  }
 
+STATICFILES_DIRS = [BASE_DIR / "static"]
