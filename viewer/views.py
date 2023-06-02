@@ -95,7 +95,7 @@ def followers_page(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=user)
     followers = profile.followers.all()
-    context = {'followers': followers}
+    context = {'followers': followers, 'username':username}
     return render(request, 'followers.html', context)
 
 
@@ -155,7 +155,7 @@ def post_status(request):
 
 @login_required
 def follow(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         pk = request.POST.get('profile_id')
         profile = Profile.objects.get(id=pk)
         if not request.user in profile.followers.all():
@@ -164,7 +164,12 @@ def follow(request):
         else:
             profile.followers.remove(request.user)
             messages.warning(request, "You unfollowed this profile!")
-        return redirect(f'/profile/{profile.user.username}/')
+
+        redirect_url = request.GET.get('redirect_url')
+        if redirect_url:
+            return redirect(redirect_url)
+        else:
+            return redirect(f'/profile/{profile.user.username}/')
 
 
 

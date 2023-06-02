@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="new chat styles">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="fixed following and follower list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/following.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/following.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/followers.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/followers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,14 +135,7 @@
       <workItem from="1685180166735" duration="5061000" />
       <workItem from="1685282341939" duration="8317000" />
       <workItem from="1685458368862" duration="8660000" />
-      <workItem from="1685716636653" duration="5500000" />
-    </task>
-    <task id="LOCAL-00070" summary="chat completed user to user">
-      <created>1681659624736</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1681659624737</updated>
+      <workItem from="1685716636653" duration="7592000" />
     </task>
     <task id="LOCAL-00071" summary="chat completed user to user">
       <created>1681664545546</created>
@@ -479,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685467329540</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="fixed following and follower list">
+      <created>1685722539686</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1685722539687</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="following page" />
     <MESSAGE value="following on profile" />
     <MESSAGE value="login style" />
     <MESSAGE value="login style#2" />
@@ -537,7 +537,8 @@
     <MESSAGE value="favicon.ico" />
     <MESSAGE value="chat#newdizain" />
     <MESSAGE value="new chat styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="new chat styles" />
+    <MESSAGE value="fixed following and follower list" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed following and follower list" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

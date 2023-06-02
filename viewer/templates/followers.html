@@ -29,11 +29,10 @@
                     </td>
                 {% else %}
                 <td style="vertical-align: middle; width: 0;" class="text-right">
-                    <form method="post" action="{% url 'follow' %}">
+                    <form method="post" action="{% url 'follow' %}?redirect_url=/profile/followers/{{username}}/">
                         {% csrf_token %}
                         <input type="hidden" name="profile_id" value="{{ follower.profile.id }}">
                         {% if request.user in follower.profile.followers.all %}
-
                         <button class="btn btn-outline btn-lg btn-outline-dark" type="submit">Unfollow</button>
                         {% else %}
                         <button class="btn btn-outline btn-lg btn-dark" type="submit">Follow</button>
