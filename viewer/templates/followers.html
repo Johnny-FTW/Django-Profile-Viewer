@@ -24,7 +24,10 @@
                         href="{% url 'profile' username=follower.username %}"
                         class="text-dark text-decoration-none"><h4>{{ follower.first_name }}
                     {{ follower.last_name }}</h4></a></td>
-
+                {% if request.user == follower %}
+                <td style="vertical-align: middle; width: 0;" class="text-right">
+                    </td>
+                {% else %}
                 <td style="vertical-align: middle; width: 0;" class="text-right">
                     <form method="post" action="{% url 'follow' %}">
                         {% csrf_token %}
@@ -37,6 +40,7 @@
                         {% endif %}
                     </form>
                 </td>
+                {% endif %}
             </tr>
             {% endfor %}
             </tbody>
