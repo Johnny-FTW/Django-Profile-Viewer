@@ -103,7 +103,7 @@ def followers_page(request, username):
 def following_page(request, username):
     user = User.objects.get(username=username)
     following = user.following.all()
-    context = {'following': following}
+    context = {'following': following, 'username': username}
     return render(request, 'following.html', context)
 
 

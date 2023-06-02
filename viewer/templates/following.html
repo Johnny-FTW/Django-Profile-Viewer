@@ -33,7 +33,7 @@
                     </td>
                 {% else %}
                 <td style="vertical-align: middle; width: 0;" class="text-right">
-                    <form method="post" action="{% url 'follow' %}">
+                    <form method="post" action="{% url 'follow' %}?redirect_url=/profile/following/{{username}}/">
                         {% csrf_token %}
                         <input type="hidden" name="profile_id" value="{{ follow.id }}">
                         {% if request.user in follow.followers.all %}
