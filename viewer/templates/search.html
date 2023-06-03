@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
 <br>
-
 <div class="row g-4">
     {% if real_usernames %}
-    <h3>Real names:</h3>
+    <h3>Search by name</h3>
     {% for real_username in real_usernames %}
 
     <div class="col-md-6 col-lg-3">
@@ -38,7 +35,7 @@
 
 {% if usernames %}
 <br>
-<h3>Usernames:</h3>
+<h3>Search by username</h3>
 
 {% for username in usernames %}
 <div class="col-md-6 col-lg-3">
