@@ -133,8 +133,9 @@ def search(request):
         if len(search) > 0:
             usernames = User.objects.filter(username__contains=search)
             real_usernames = User.objects.filter(Q(first_name__icontains=search) | Q(last_name__icontains=search))
-
-    context = {'search': search, 'usernames': usernames, 'real_usernames': real_usernames}
+        if not usernames and not real_usernames:
+            messages.error(request, "No match.")
+    context = {'usernames': usernames, 'real_usernames': real_usernames}
     return render(request, 'search.html', context)
 
 
