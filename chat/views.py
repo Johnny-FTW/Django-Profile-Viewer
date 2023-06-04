@@ -10,44 +10,6 @@ from chat.models import ChatMessage
 # Create your views here.
 
 @login_required
-def index(request):
-    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
-    context = {'users': users}
-    return render(request, 'index.html', context)
-
-
-@login_required
-def chat(request, username):
-    friend = get_object_or_404(User, username=username)
-    profile = request.user.profile
-
-    # Check if friend is in the followers list of the logged-in user
-    if friend not in profile.followers.all():
-        return HttpResponseForbidden("You can only chat with your friends.")
-
-    # Check if logged-in user is in the followers list of the friend
-    friend_profile = friend.profile
-    if request.user not in friend_profile.followers.all():
-        return HttpResponseForbidden("You can only chat with your friends.")
-
-    users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
-    form = ChatMessageForm()
-    chats = ChatMessage.objects.all()
-    rec_chats = ChatMessage.objects.filter(msg_sender=friend, msg_receiver=request.user, seen=False)
-    rec_chats.update(seen=True)
-    if request.method == 'POST':
-        form = ChatMessageForm(request.POST)
-        if form.is_valid():
-            chat_message = form.save(commit=False)
-            chat_message.msg_sender = request.user
-            chat_message.msg_receiver = friend
-            chat_message.save()
-            return redirect('chat', username=username)
-    context = {'friend': friend, 'users': users, 'form': form, 'chats': chats, 'num': rec_chats.count()}
-    return render(request, 'chat.html', context)
-
-
-@login_required
 def sent_messages(request, username):
     friend = User.objects.get(username=username)
     data = json.loads(request.body)
@@ -78,15 +40,13 @@ def chat_notification(request):
     return JsonResponse(arr, safe=False)
 
 
-def test(request, username):
+def chat(request, username):
     friend = get_object_or_404(User, username=username)
     profile = request.user.profile
 
-    # Check if friend is in the followers list of the logged-in user
     if friend not in profile.followers.all():
         return HttpResponseForbidden("You can only chat with your friends.")
 
-    # Check if logged-in user is in the followers list of the friend
     friend_profile = friend.profile
     if request.user not in friend_profile.followers.all():
         return HttpResponseForbidden("You can only chat with your friends.")
@@ -105,10 +65,10 @@ def test(request, username):
             chat_message.save()
             return redirect('chat', username=username)
     context = {'friend': friend, 'users': users, 'form': form, 'chats': chats, 'num': rec_chats.count()}
-    return render(request, 'chat2.html', context)
+    return render(request, 'chat.html', context)
 
 
-def index2(request):
+def index(request):
     users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     context = {'users':users}
-    return render(request, 'index2.html', context)
+    return render(request, 'index.html', context)

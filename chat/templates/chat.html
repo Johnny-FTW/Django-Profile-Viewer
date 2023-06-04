@@ -1,90 +1,111 @@
 {% extends 'base.html' %}
-{% block title %} Chat {% endblock %}
+{% load static %}
+{% block title %}Chat{% endblock %}
 {% block content %}
 
-<section>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
-                <h5 class="font-weight-bold mb-3 text-center text-lg-start">Friends:</h5>
-                <div class="card">
-                    <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                            {% for user in users %}
-
-                            <li class="p-2 border-bottom" style="background-color: #eee;">
-                                <a href="#" class="d-flex justify-content-between">
-                                    <div class="d-flex flex-row">
-                                        {% if user.profile.profile_picture %}
-                                        <img src="{{ user.profile.profile_picture }}" alt="avatar"
-                                             class="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                                             width="60" height="60">
-                                        {% else %}
-                                        <img src="/static/profile_picture/profile_picture.jpg"
-                                             alt="avatar"
-                                             class="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                                             width="60" height="60">
-                                        {% endif %}
-                                        <div class="pt-1">
-                                            <a href="{% url 'chat' username=user.username %}"
-                                               class="fw-bold text-dark text-decoration-none">{{ user.first_name }}
-                                                {{ user.last_name }}</a>
-                                        </div>
-                                    </div>
-                                    <div class="pb-3">
-                                        <div class=" badge bg-danger float-end msg" >0</div>
-                                    </div>
-                                </a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+<link rel="stylesheet" href="{% static 'css.css' %}">
+<br><br>
+<div class="container-fluid h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-md-4 col-xl-3 chat">
+            <div class="card mb-sm-3 mb-md-0 contacts_card">
+                <div class="card-header">
+                    <h2 class="con">Contacts</h2>
+                </div>
+                <div class="card-body contacts_body">
+                    <ui class="contacts">
+                        {% for user in users %}
+                        {% if user.username == friend.username %}
+                        <li class="active2">
+                            {% else%}
+                        <li>
+                            {% endif %}
+                            <div class="d-flex bd-highlight">
+                                <div class="img_cont">
+                                    {% if user.profile.profile_picture %}
+                                    <img src="{{ user.profile.profile_picture }}"
+                                         class="rounded-circle user_img">
+                                    {% else %}
+                                    <img src="/static/profile_picture/profile_picture.jpg"
+                                         class="rounded-circle user_img">
+                                    {% endif %}
+                                    <div class="badge bg-danger msg position-absolute bottom-0 end-0">0</div>
+                                </div>
+                                <div class="user_info">
+                                    <a href="{% url 'chat' username=user.username %}" class="text-decoration-none">
+                                        <span>{{ user.first_name }} {{ user.last_name }}</span>
+                                        <p>{{ user.username }}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ui>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-6 col-lg-7 col-xl-8">
-                <h5 class="font-weight-bold mb-3 text-center text-lg-start">Chat with: {{friend.first_name}} {{friend.last_name}} ({{friend.username}})</h5>
-                <ul class="list-unstyled">
+        <div class="col-md-8 col-xl-6 chat">
+            <div class="card">
+                <div class="card-header msg_head">
+                    <div class="d-flex bd-highlight">
+                        <div class="img_cont">
+                            {% if friend.profile.profile_picture %}
+                            <img src="{{friend.profile.profile_picture}}"
+                                 class="rounded-circle user_img">
+                            {% else %}
+                            <img src="/static/profile_picture/profile_picture.jpg"
+                                 class="rounded-circle user_img">
+                            {% endif %}
+                        </div>
+                        <div class="user_info">
+                            <span>Chat with {{friend.first_name}} {{friend.last_name}}</span>
+                            <p>{{ friend.username }}</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="chat-body" id="chat-body">
-                        {% for chat in chats %}
-                        {% if chat.msg_sender == request.user and chat.msg_receiver == friend %}
+                <div class="card-body msg_card_body" id="msg_card_body">
+                    {% for chat in chats %}
+                    {% if chat.msg_sender == request.user and chat.msg_receiver == friend %}
 
-                        <div class="chat-box-sent">
+
+                        <div class="msg_container_send">
                             {{ chat }}
                         </div>
 
-                        {% elif chat.msg_sender == friend and chat.msg_receiver == request.user %}
+                    {% elif chat.msg_sender == friend and chat.msg_receiver == request.user %}
 
-                        <div class="chat-box-received">
+
+                        <div class="msg_container_rec">
                             {{chat}}
                         </div>
 
-                        {% endif %}
-                        {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                    <div class="msg_container_send" id="msg_container_send" style="display: none">
 
-                        <div class="chat-box-sent" id="chat-box-sent" style="display: none">
-
-                        </div>
                     </div>
-                    <form action="" id="myform" method="POST">
-
-                        <li class="bg-white mb-3">
-                            <div class="form-outline">
+                </div>
+                    <div class="card-footer">
+                        <form action="" id="myform" method="POST">
+                            <div class="input-group">
                                 {% csrf_token %}
                                 {{ form.body }}
-                                <input type="hidden" id="friend-username" value="{{ friend.username }}">
-                            </div>
-                        </li>
-                        <button type="submit" class="btn btn-dark btn-rounded float-end" id="submit">Send</button>
-                    </form>
+                                <div class="input-group-append">
+                                    <input type="hidden" id="friend-username" value="{{ friend.username }}">
 
-                </ul>
+                                    <button type="submit" class="input-group-text send_btn"><i
+                                            class="fas fa-location-arrow"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>
-</section>
-
+</div>
+</body>
 
 <script>
     const num = {{num}}
@@ -105,10 +126,9 @@
             })
             .catch(error => console.log(error))
     }
-
 </script>
 
-
+<script src="{% static 'chat.js' %}"></script>
 {% endblock %}
 
 
