@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Edit profile{% endblock %}
 
 {% block content %}
@@ -147,6 +147,8 @@
         </div>
     </div>
 </section>
+
+<script src="{% static 'add_photos.js' %}"></script>
 
 {% endblock %}
 

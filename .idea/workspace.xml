@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="changed models,flash messages, templates">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="changed chat,css,js,views,urls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/static/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/static/css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/templates/chat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,14 +143,8 @@
       <workItem from="1685458368862" duration="8660000" />
       <workItem from="1685716636653" duration="11945000" />
       <workItem from="1685780911143" duration="19992000" />
-      <workItem from="1685867360837" duration="7705000" />
-    </task>
-    <task id="LOCAL-00076" summary="fixed messages">
-      <created>1682450769858</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1682450769858</updated>
+      <workItem from="1685867360837" duration="12840000" />
+      <workItem from="1685884051417" duration="954000" />
     </task>
     <task id="LOCAL-00077" summary="fixed messages#2">
       <created>1682536756942</created>
@@ -487,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685806971806</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="changed chat,css,js,views,urls">
+      <created>1685875597151</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1685875597151</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed statuses of creator" />
     <MESSAGE value="default profile picture" />
     <MESSAGE value="profile picture size" />
     <MESSAGE value="urls reorganized" />
@@ -545,7 +546,8 @@
     <MESSAGE value="styled follower anf following lists" />
     <MESSAGE value="changed search" />
     <MESSAGE value="changed models,flash messages, templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed models,flash messages, templates" />
+    <MESSAGE value="changed chat,css,js,views,urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed chat,css,js,views,urls" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

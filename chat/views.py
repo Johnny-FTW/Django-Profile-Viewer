@@ -40,6 +40,7 @@ def chat_notification(request):
     return JsonResponse(arr, safe=False)
 
 
+@login_required
 def chat(request, username):
     friend = get_object_or_404(User, username=username)
     profile = request.user.profile
@@ -68,6 +69,7 @@ def chat(request, username):
     return render(request, 'chat.html', context)
 
 
+@login_required
 def index(request):
     users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     context = {'users':users}

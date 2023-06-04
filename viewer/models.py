@@ -25,6 +25,7 @@ class Profile(Model):
     city = CharField(max_length=50, null=True, blank=True)
     about = TextField(max_length=1024, null=True, blank=True)
     profile_picture = CharField(max_length=1024, null=True, blank=True)
+    timeline_picture = CharField(max_length=1024, null=True, blank=True)
     photos = ManyToManyField(Photo, blank=True)
     followers = models.ManyToManyField(User, related_name='following', blank=True)
 

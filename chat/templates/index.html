@@ -19,13 +19,11 @@
                     <h2 class="con">Contacts</h2>
                 </div>
                 <div class="card-body contacts_body">
-
                     <ui class="contacts">
                         {% if users %}
                         {% for user in users %}
                         <li>
                             <div class="d-flex bd-highlight">
-
                                 <div class="img_cont">
                                     {% if user.profile.profile_picture %}
                                     <img src="{{ user.profile.profile_picture }}"
@@ -45,9 +43,7 @@
                             </div>
                         </li>
                         {% endfor %}
-
                         {% else %}
-
                         <div class="user_info" style="white-space: normal;">
                         <span>It looks like you don't have any friends yet to chat with. Don't worry, you can start by
                                 following other users and they can follow you back. Once you're following each other,
@@ -58,14 +54,10 @@
                                 Happy chatting!</span>
                             </div>
                         {% endif %}
-
                     </ui>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 </body>
