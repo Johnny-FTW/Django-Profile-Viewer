@@ -47,10 +47,12 @@ function sendChat(e) {
             chatMessageBox.innerHTML = data.body
             chat_body.append(chatMessageBox)
             document.getElementById("id_body").value = ""
+            scrollToBottom();
         })
         .catch((error) => {
             console.error('Error:', error);
         });
+
 }
 
 
@@ -89,6 +91,7 @@ function receiveMessages() {
                     chatMessageBox.innerText = lastMsg
                     chat_body.append(chatMessageBox)
                     document.getElementById("id_body").value = ""
+                    scrollToBottom();
                 }
             }
             counter = data.length
@@ -99,4 +102,9 @@ function receiveMessages() {
 }
 
 
+function scrollToBottom() {
+  var chatMessages = document.getElementById("msg_card_body");
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
+scrollToBottom();

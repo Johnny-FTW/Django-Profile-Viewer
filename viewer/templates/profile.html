@@ -9,7 +9,7 @@
             <div class="col col-lg-9 col-xl-7">
                 <div class="card">
 
-                    <div class="rounded-top text-white d-flex flex-row" style="background-image: url('path/to/image.jpg'); background-color: black; height: 200px;">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-image: url('{{ profile.cover_picture }}'); background-color: black; height: 200px;">
                         <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                             {% if profile.profile_picture %}
                             <img src="{{ profile.profile_picture }}"

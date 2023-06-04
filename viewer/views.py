@@ -49,6 +49,7 @@ def edit_profile(request):
         last_name = request.POST.get('last_name').strip()
         email = request.POST.get('email').strip()
         gender = request.POST.get('gender', '')
+        cover_picture = request.POST.get('cover').strip()
 
         if profile_picture:
             url_validator = URLValidator()
@@ -63,6 +64,7 @@ def edit_profile(request):
 
         profile.city = city
         profile.about = about
+        profile.cover_picture = cover_picture
 
         if gender:
             selected_gender = Gender.objects.get(id=gender)

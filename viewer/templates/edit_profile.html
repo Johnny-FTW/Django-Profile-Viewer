@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Edit profile{% endblock %}
-
 {% block content %}
 
 <section class="h-100 gradient-custom-2">
@@ -9,7 +8,7 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-9 col-xl-7">
                 <div class="card">
-                    <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-image: url('{{ profile.cover_picture }}'); background-color: black; height: 200px;">
                         <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                             {% if profile.profile_picture %}
                             <img src="{{ profile.profile_picture }}"
@@ -44,6 +43,10 @@
                                     <label>Profile picture link:</label>
                                     <input type="text" class="form-control" name="photo" id="profile_photo"
                                            value="{% if profile.profile_picture %}{{ profile.profile_picture }}{% endif %}">
+                                    <br>
+                                    <label>Cover picture link:</label>
+                                    <input type="text" class="form-control" name="cover" id="cover"
+                                           value="{% if profile.cover_picture %}{{ profile.cover_picture }}{% endif %}">
                                 </div>
                             </div>
 
