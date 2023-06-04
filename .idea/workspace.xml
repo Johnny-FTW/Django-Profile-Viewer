@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="changes models and views">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="changed, models, cover pictures and chat to scroll down">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat/static/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat/static/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/followers.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/followers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,14 +140,7 @@
       <workItem from="1685716636653" duration="11945000" />
       <workItem from="1685780911143" duration="19992000" />
       <workItem from="1685867360837" duration="12840000" />
-      <workItem from="1685884051417" duration="5339000" />
-    </task>
-    <task id="LOCAL-00078" summary="fixed messages#3">
-      <created>1682619204545</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1682619204545</updated>
+      <workItem from="1685884051417" duration="8527000" />
     </task>
     <task id="LOCAL-00079" summary="reformat files">
       <created>1682750523517</created>
@@ -487,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685885031312</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="changed, models, cover pictures and chat to scroll down">
+      <created>1685889575121</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1685889575121</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="profile picture size" />
     <MESSAGE value="urls reorganized" />
     <MESSAGE value="followers list" />
     <MESSAGE value="followers list#login required" />
@@ -545,7 +542,8 @@
     <MESSAGE value="changed models,flash messages, templates" />
     <MESSAGE value="changed chat,css,js,views,urls" />
     <MESSAGE value="changes models and views" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes models and views" />
+    <MESSAGE value="changed, models, cover pictures and chat to scroll down" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed, models, cover pictures and chat to scroll down" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

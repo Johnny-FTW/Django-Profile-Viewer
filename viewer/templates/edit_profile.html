@@ -8,12 +8,12 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-9 col-xl-7">
                 <div class="card">
-                    <div class="rounded-top text-white d-flex flex-row" style="background-image: url('{{ profile.cover_picture }}'); background-color: black; height: 200px;">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-image: url('{{ profile.cover_picture }}'); background-color: black; height: 200px; background-size: cover; background-position: center;">
                         <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                             {% if profile.profile_picture %}
                             <img src="{{ profile.profile_picture }}"
                                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                                 style="width: 150px; z-index: 1">
+                                 style="width: 150px; height: 150px; z-index: 1">
                             {% else %}
                             <img src="/static/profile_picture/profile_picture.jpg"
                                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
