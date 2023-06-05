@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="changed, models, cover pictures and chat to scroll down">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/followers.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/followers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,14 +138,8 @@
       <workItem from="1685716636653" duration="11945000" />
       <workItem from="1685780911143" duration="19992000" />
       <workItem from="1685867360837" duration="12840000" />
-      <workItem from="1685884051417" duration="8527000" />
-    </task>
-    <task id="LOCAL-00079" summary="reformat files">
-      <created>1682750523517</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1682750523517</updated>
+      <workItem from="1685884051417" duration="8580000" />
+      <workItem from="1685980054004" duration="1412000" />
     </task>
     <task id="LOCAL-00080" summary="receive messages">
       <created>1682763442935</created>
@@ -485,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685889575121</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="styling">
+      <created>1685893131144</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1685893131144</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="urls reorganized" />
     <MESSAGE value="followers list" />
     <MESSAGE value="followers list#login required" />
     <MESSAGE value="following list" />
@@ -543,7 +541,8 @@
     <MESSAGE value="changed chat,css,js,views,urls" />
     <MESSAGE value="changes models and views" />
     <MESSAGE value="changed, models, cover pictures and chat to scroll down" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed, models, cover pictures and chat to scroll down" />
+    <MESSAGE value="styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />

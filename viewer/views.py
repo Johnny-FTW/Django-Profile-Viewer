@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.paginator import Paginator
 from django.core.validators import URLValidator
 from django.db import transaction
 from django.db.models import Q
@@ -117,12 +118,20 @@ def profile(request, username):
     return render(request, 'profile.html', context)
 
 
+def paginate_queryset(request, queryset, page_size):
+    paginator = Paginator(queryset, page_size)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return page_obj
+
+
 @login_required
 def news(request):
     users = User.objects.filter(profile__followers=request.user, id__in=request.user.profile.followers.all())
     statuses = Status.objects.filter(Q(user__in=users) | Q(user=request.user))
+    page_obj = paginate_queryset(request, statuses, 15)
     comments = Comment.objects.all()
-    context = {'statuses': statuses, 'comments':comments}
+    context = {'page_obj': page_obj, 'comments':comments}
     return render(request, 'news.html', context)
 
 
@@ -173,7 +182,6 @@ def follow(request):
             return redirect(redirect_url)
         else:
             return redirect(f'/profile/{profile.user.username}/')
-
 
 
 @login_required
