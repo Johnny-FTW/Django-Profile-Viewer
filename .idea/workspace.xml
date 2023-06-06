@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="styling">
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="pagination news">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/6.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +63,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -139,14 +145,9 @@
       <workItem from="1685780911143" duration="19992000" />
       <workItem from="1685867360837" duration="12840000" />
       <workItem from="1685884051417" duration="8580000" />
-      <workItem from="1685980054004" duration="1412000" />
-    </task>
-    <task id="LOCAL-00080" summary="receive messages">
-      <created>1682763442935</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1682763442935</updated>
+      <workItem from="1685980054004" duration="2167000" />
+      <workItem from="1685985879916" duration="3374000" />
+      <workItem from="1686073745627" duration="707000" />
     </task>
     <task id="LOCAL-00081" summary="notifications">
       <created>1682774460150</created>
@@ -484,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685893131144</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="pagination news">
+      <created>1685981936573</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1685981936574</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="followers list" />
     <MESSAGE value="followers list#login required" />
     <MESSAGE value="following list" />
     <MESSAGE value="search style" />
@@ -542,7 +549,8 @@
     <MESSAGE value="changes models and views" />
     <MESSAGE value="changed, models, cover pictures and chat to scroll down" />
     <MESSAGE value="styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="styling" />
+    <MESSAGE value="pagination news" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination news" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/manage_py$settings.coverage" NAME="settings Coverage Results" MODIFIED="1676121283096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProfileViewer" />
