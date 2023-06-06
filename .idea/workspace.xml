@@ -7,12 +7,6 @@
     <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="pagination news">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/screens/6.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,14 +141,7 @@
       <workItem from="1685884051417" duration="8580000" />
       <workItem from="1685980054004" duration="2167000" />
       <workItem from="1685985879916" duration="3374000" />
-      <workItem from="1686073745627" duration="707000" />
-    </task>
-    <task id="LOCAL-00081" summary="notifications">
-      <created>1682774460150</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1682774460150</updated>
+      <workItem from="1686073745627" duration="2283000" />
     </task>
     <task id="LOCAL-00082" summary="messages">
       <created>1682786743896</created>
@@ -492,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685981936574</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="pagination news">
+      <created>1686074557966</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1686074557966</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

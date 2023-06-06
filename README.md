@@ -16,15 +16,15 @@
 <br>
 <div align="center">
   <a href="https://github.com/Johnny-FTW/Django-Profile-Viewer">
-    <img src="https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/static/images/favicon.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/static/images/android-chrome-512x512.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Profile Viewer</h3>
 
   <p align="center">
-    Introducing Profile Viewer, a new social site that lets you create your own profile, follow other people, 
-and connect with them through real time chat. With Profile Viewer, you can easily stay updated on your friends'
-and family's latest news, statuses, and activities.
+    Profile Viewer is a web application designed to provide a social networking experience where
+users can connect, share, and interact with each other. It offers a range of features that make it easy 
+to create and manage user profiles, connect with friends, share updates, and engage in real-time chat conversations.
 
   </p>
 </div>
@@ -57,13 +57,13 @@ and family's latest news, statuses, and activities.
 
 
 
-Main system features:
-* User registration and login.
-* Creating and editing events by organizers (user with a special role).
-* Commenting on events by a logged in users.
-* Signing up for events.
-* Events search engine.
-* API for other websites / services that want to present events.
+Key features:
+* User Registration and Login: Users can create an account and securely log in to access the application.
+* User Profile Management: Users can create and update their profiles, adding personal information, profile pictures, and other details.
+* Search and Follow: Users can search for other people and follow them to stay updated on their activities.
+* Status Updates: Users can post and view status updates, allowing them to share their thoughts and experiences with their friends.
+* Commenting and Reacting: Users can comment on, like, and dislike the statuses posted by their friends, fostering engagement and interaction.
+* Real-time Chat: When users follow each other, they gain access to a real-time chat feature, enabling private conversations.
 
 ### Built With
 
@@ -72,10 +72,6 @@ Main system features:
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
-General Guidelines:
-* Website development using Django and Django REST Framework as an API.
-* Introducing the division into models, views and controllers in the application and placing the appropriate logic in each of them.
-* Securing access to the application and functionality by using django.contrib.auth
 
 Screenshots:
 
@@ -121,9 +117,19 @@ Below is an example of how to install and set up this app.
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Contributions
+
+Contributions to Profile Viewer are welcome! If you have any ideas for improvements, bug fixes, or new features, feel
+free to submit a pull request. Be sure to follow the contribution guidelines outlined in the repository.
+
+## Feedback and Support
+
+If you encounter any issues while using Profile Viewer or have any suggestions, please create an issue on the GitHub 
+repository. We appreciate your feedback and will do our best to address it promptly.
+
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
