@@ -75,13 +75,37 @@ Key features:
 * [![JQuery][JQuery.com]][JQuery-url]
 * [![SQL][SQL.com]][SQL-url]
 
-Screenshots:
+### Screenshots
 
-![image](https://raw.githubusercontent.com/Johnny-FTW/EventAggregationService/main/imgs/Screenshot_1.png)
+Register: Users can create an account with their email, username and password.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/1.png)
 <br>
-![image](https://raw.githubusercontent.com/Johnny-FTW/EventAggregationService/main/imgs/Screenshot_2.png)
+Log in view:
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/2.png)
 <br>
-![image](https://raw.githubusercontent.com/Johnny-FTW/EventAggregationService/main/imgs/Screenshot_3.png)
+View Own Profile: Users can view their own profile, which displays their personal information and uploaded photos.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/3.png)
+<br>
+Update Profile: Users can edit and update their profile information, such as name, bio, and profile picture.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/4.png)
+<br>
+Add Photos: Users can upload and add photos to their profile to showcase their experiences or interests.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/5.png)
+<br>
+Search Friends: Users can search for friends by their name or username to find and connect with them.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/6.png)
+<br>
+Follow Friends: Users can choose to follow their friends to stay updated on their activities and status updates.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/7.png)
+<br>
+Followers/Following view: Users can manage followers/following lists.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/8.png)
+<br>
+Friends' Statuses and Reactions: When users follow each other, they can see their friends' statuses and react to them by liking or commenting.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/9.png)
+<br>
+Real-time Chat: Users who follow each other can engage in real-time chat conversations with their friends.
+![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/10.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,7 +127,7 @@ Below is an example of how to install and set up this app.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Johnny-FTW/EventAggregationService.git
+   git clone https://github.com/Johnny-FTW/Django-Profile-Viewer.git
    ```
 2. Install project dependencies
    ```sh
@@ -136,7 +160,7 @@ repository. We appreciate your feedback and will do our best to address it promp
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See <a href="https://github.com/Johnny-FTW/Django-Profile-Viewer/blob/main/LICENSE">`LICENSE`</a> for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
