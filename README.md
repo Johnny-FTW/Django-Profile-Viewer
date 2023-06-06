@@ -77,34 +77,34 @@ Key features:
 
 ### Screenshots
 
-Register: Users can create an account with their email, username and password.
+<strong>Register:</strong> Users can create an account with their email, username and password.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/1.png)
 <br>
-Log in view:
+<strong>Log in view:</strong>
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/2.png)
 <br>
-View Own Profile: Users can view their own profile, which displays their personal information and uploaded photos.
+<strong>View Own Profile:</strong> Users can view their own profile, which displays their personal information and uploaded photos.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/3.png)
 <br>
-Update Profile: Users can edit and update their profile information, such as name, bio, and profile picture.
+<strong>Update Profile:</strong> Users can edit and update their profile information, such as name, bio, and profile picture.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/4.png)
 <br>
-Add Photos: Users can upload and add photos to their profile to showcase their experiences or interests.
+<strong>Add Photos:</strong> Users can upload and add photos to their profile to showcase their experiences or interests.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/5.png)
 <br>
-Search Friends: Users can search for friends by their name or username to find and connect with them.
+<strong>Search Friends:</strong> Users can search for friends by their name or username to find and connect with them.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/6.png)
 <br>
-Follow Friends: Users can choose to follow their friends to stay updated on their activities and status updates.
+<strong>Follow Friends:</strong> Users can choose to follow their friends to stay updated on their activities and status updates.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/7.png)
 <br>
-Followers/Following view: Users can manage followers/following lists.
+<strong>Followers/Following view:</strong> Users can manage followers/following lists.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/8.png)
 <br>
-Friends' Statuses and Reactions: When users follow each other, they can see their friends' statuses and react to them by liking or commenting.
+<strong>Friends' Statuses and Reactions:</strong> When users follow each other, they can see their friends' statuses and react to them by liking or commenting.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/9.png)
 <br>
-Real-time Chat: Users who follow each other can engage in real-time chat conversations with their friends.
+<strong>Real-time Chat:</strong> Users who follow each other can engage in real-time chat conversations with their friends.
 ![image](https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/screens/10.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
