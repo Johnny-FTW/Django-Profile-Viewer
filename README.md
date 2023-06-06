@@ -1,9 +1,4 @@
-
-
-
 <a name="readme-top"></a>
-
-
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -19,7 +14,7 @@
     <img src="https://raw.githubusercontent.com/Johnny-FTW/Django-Profile-Viewer/main/static/images/android-chrome-512x512.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Profile Viewer</h3>
+<h3 align="center">Profile Viewer</h3>
 
   <p align="center">
     Profile Viewer is a web application designed to provide a social networking experience where
@@ -45,6 +40,8 @@ to create and manage user profiles, connect with friends, share updates, and eng
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+   <li><a href="#contributions">Contributions</a></li>
+      <li><a href="#feedback-and-support">Feedback and Support</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -54,24 +51,29 @@ to create and manage user profiles, connect with friends, share updates, and eng
 
 ## About The Project
 
-
-
-
 Key features:
+
 * User Registration and Login: Users can create an account and securely log in to access the application.
-* User Profile Management: Users can create and update their profiles, adding personal information, profile pictures, and other details.
+* User Profile Management: Users can create and update their profiles, adding personal information, profile pictures,
+  and other details.
 * Search and Follow: Users can search for other people and follow them to stay updated on their activities.
-* Status Updates: Users can post and view status updates, allowing them to share their thoughts and experiences with their friends.
-* Commenting and Reacting: Users can comment on, like, and dislike the statuses posted by their friends, fostering engagement and interaction.
-* Real-time Chat: When users follow each other, they gain access to a real-time chat feature, enabling private conversations.
+* Status Updates: Users can post and view status updates, allowing them to share their thoughts and experiences with
+  their friends.
+* Commenting and Reacting: Users can comment on, like, and dislike the statuses posted by their friends, fostering
+  engagement and interaction.
+* Real-time Chat: When users follow each other, they gain access to a real-time chat feature, enabling private
+  conversations.
 
 ### Built With
 
 * [![Python][Python.org]][Python-url]
 * [![Django][Django.com]][Django-url]
+* [![HTML][HTML.com]][HTML-url]
+* [![CSS][CSS.com]][CSS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JS][JS.com]][JS-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-
+* [![SQL][SQL.com]][SQL-url]
 
 Screenshots:
 
@@ -90,8 +92,8 @@ To get a local copy up and running follow these simple example steps.
 ### Requirements
 
 List of requirements:
-* Django==4.1.6
 
+* Django==4.1.6
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,6 +117,7 @@ Below is an example of how to install and set up this app.
    ```sh
    python manage.py runserver
    ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributions
@@ -122,10 +125,14 @@ Below is an example of how to install and set up this app.
 Contributions to Profile Viewer are welcome! If you have any ideas for improvements, bug fixes, or new features, feel
 free to submit a pull request. Be sure to follow the contribution guidelines outlined in the repository.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Feedback and Support
 
-If you encounter any issues while using Profile Viewer or have any suggestions, please create an issue on the GitHub 
+If you encounter any issues while using Profile Viewer or have any suggestions, please create an issue on the GitHub
 repository. We appreciate your feedback and will do our best to address it promptly.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
 
@@ -133,47 +140,68 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## Contact
 
-- Jan Hatapka - [Linkedin](https://www.linkedin.com/in/jan-hatapka-6b970b205/) - mail: jan.hatapka@gmail.com 
-
+- Jan Hatapka - [Linkedin](https://www.linkedin.com/in/jan-hatapka-6b970b205/) - mail: jan.hatapka@gmail.com
 
 Project Link: [https://github.com/Johnny-FTW/Django-Profile-Viewer](https://github.com/Johnny-FTW/Django-Profile-Viewer)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-
 [Python.org]: https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white
+
 [Python-url]: https://www.python.org/
 
 [Django.com]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
+
 [Django-url]: https://www.djangoproject.com/
 
+[HTML.com]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+
+[HTML-url]: https://https://html.com//
+
+[CSS.com]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+
+[CSS-url]: https://www.css3.com/
 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
 [Bootstrap-url]: https://getbootstrap.com
 
+[JS.com]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+
+[JS-url]: https://www.javascript.com/
+
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+
+[JQuery-url]: https://jquery.com
+
+[SQL.com]: https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
+
+[SQL-url]: https://www.sqlite.org/index.html
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/Johnny-FTW/Django-Profile-Viewer.svg?style=for-the-badge
+
 [contributors-url]: https://github.com/Johnny-FTW/Django-Profile-Viewer/graphs/contributors
 
 [forks-shield]: https://img.shields.io/github/forks/Johnny-FTW/Django-Profile-Viewer.svg?style=for-the-badge
+
 [forks-url]: https://github.com/Johnny-FTW/Django-Profile-Viewer/network/members
 
 [stars-shield]: https://img.shields.io/github/stars/Johnny-FTW/Django-Profile-Viewer.svg?style=for-the-badge
+
 [stars-url]: https://github.com/Johnny-FTW/Django-Profile-Viewer/stargazers
 
 [issues-shield]: https://img.shields.io/github/issues/Johnny-FTW/Django-Profile-Viewer.svg?style=for-the-badge
+
 [issues-url]: https://github.com/Johnny-FTW/Django-Profile-Viewer/issues
 
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+
 [license-url]: https://github.com/Johnny-FTW/Django-Profile-Viewer/blob/main/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
 [linkedin-url]: https://www.linkedin.com/in/jan-hatapka-6b970b205/
