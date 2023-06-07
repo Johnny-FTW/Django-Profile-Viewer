@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileViewer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProfileViewer/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="73f4a077-03e8-465f-a486-3dd758ca4b69" name="Changes" comment="er diagram added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +63,31 @@
       <recent name="C:\Users\janha\Desktop\Diango_Profile_Viewer\templates" />
       <recent name="C:\Users\janha\Desktop\Diango_Profile_Viewer\accounts\templates" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Diango_Profile_Viewer" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Diango_Profile_Viewer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,14 +166,7 @@
       <workItem from="1686073745627" duration="7604000" />
       <workItem from="1686153884873" duration="34000" />
       <workItem from="1686156999265" duration="670000" />
-      <workItem from="1686157697556" duration="2288000" />
-    </task>
-    <task id="LOCAL-00087" summary="style buttons">
-      <created>1682947411395</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1682947411395</updated>
+      <workItem from="1686157697556" duration="2703000" />
     </task>
     <task id="LOCAL-00088" summary="screens">
       <created>1682959285517</created>
@@ -489,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686081150341</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="er diagram added">
+      <created>1686160420495</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1686160420496</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="following list" />
     <MESSAGE value="search style" />
     <MESSAGE value="search real names" />
     <MESSAGE value="search usernames names" />
@@ -547,6 +568,7 @@
     <MESSAGE value="styling" />
     <MESSAGE value="pagination news" />
     <MESSAGE value="md" />
-    <option name="LAST_COMMIT_MESSAGE" value="md" />
+    <MESSAGE value="er diagram added" />
+    <option name="LAST_COMMIT_MESSAGE" value="er diagram added" />
   </component>
 </project>
